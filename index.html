@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Екатерина Глебова — клинический психолог</title>
+<meta name="description" content="Помогаю найти внутреннюю опору, лучше понять себя и увереннее пройти период перемен. Индивидуальная терапия онлайн и очно, первая консультация — 50–55 минут.">
+<link rel="canonical" href="%VITE_SITE_URL%/">
+<meta name="theme-color" content="#ebe8e1">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Екатерина Глебова — психолог">
+<meta property="og:title" content="Екатерина Глебова — клинический психолог">
+<meta property="og:description" content="Помогаю найти внутреннюю опору, лучше понять себя и увереннее пройти период перемен. Индивидуальная терапия онлайн и очно.">
+<meta property="og:url" content="%VITE_SITE_URL%/">
+<!-- TODO: replace with a dedicated 1200×630 preview image once the owner provides one. -->
+<meta property="og:image" content="%VITE_SITE_URL%/assets/contact.png">
+<meta property="og:image:width" content="1204">
+<meta property="og:image:height" content="1240">
+<meta property="og:image:alt" content="Екатерина Глебова, клинический психолог">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Екатерина Глебова — клинический психолог">
+<meta name="twitter:description" content="Помогаю найти внутреннюю опору, лучше понять себя и увереннее пройти период перемен.">
+<meta name="twitter:image" content="%VITE_SITE_URL%/assets/contact.png">
+
+<link rel="preload" as="image" href="/assets/hero-cutout.png" fetchpriority="high">
+<link rel="stylesheet" href="/src/style.css">
+<!-- Breakpoint is decided before first paint so the right hero renders immediately.
+     phone <600 · tab-v 600–1024 · tab-h 1025–1366 + coarse pointer · desk otherwise. -->
+<script>
+(function(){var d=document.documentElement,w=d.clientWidth||innerWidth,c=matchMedia('(pointer: coarse)').matches;d.dataset.bp=w<600?'phone':w<=1024?'tab-v':(w<=1366&&c)?'tab-h':'desk';})();
+</script>
+<noscript><style>.intro{display:none}</style></noscript>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+
+<!-- NAV (desktop only) -->
+<nav class="nav">
+  <div class="nav__in">
+    <a href="#top" class="nav__brand"><span class="nav__name">ЕКАТЕРИНА ГЛЕБОВА</span><span class="nav__role">ПСИХОЛОГ</span></a>
+    <div class="nav__links">
+      <a href="#about">Обо мне</a>
+      <a href="#requests">Запросы</a>
+      <a href="#prices">Условия</a>
+      <a href="#reviews">Отзывы</a>
+    </div>
+  </div>
+</nav>
+
+<div id="page">
+
+<div id="top" class="heroes">
+
+<!-- HERO · DESKTOP (>1366px or fine pointer ≥1025px) · reference 1553×988 -->
+<section class="hero hero--desk" data-hero="desk">
+  <div class="hero__par" data-hero-par>
+    <div class="hero__mouse" data-hero-mouse>
+      <div class="hero__img" data-hero-img>
+        <img src="/assets/hero-cutout.png" alt="Екатерина Глебова" draggable="false" fetchpriority="high" decoding="async">
+      </div>
+    </div>
+  </div>
+  <div class="hero__text" data-hero-text>
+    <div class="hero__stack">
+    <h1 class="hero__h1">
+      <span class="hero__ln"><span data-line>Помогаю найти</span></span>
+      <span class="hero__ln"><span data-line class="accent">внутреннюю опору, лучше</span></span>
+      <span class="hero__ln"><span data-line><span class="accent">понять себя</span> и увереннее</span></span>
+      <span class="hero__ln"><span data-line>пройти период перемен</span></span>
+    </h1>
+    <p class="hero__lead" data-hero-fade>Если ты чувствуешь усталость от жизни, хочешь изменений, но не знаешь с чего начать, не обязательно справляться в одиночку</p>
+    <div class="hero__cta" data-hero-fade>
+      <a class="btn-pill btn-pill--hero" href="%VITE_TELEGRAM_URL%" target="_blank" rel="noopener" data-magnetic>
+        <span>Записаться на консультацию</span>
+        <span class="btn-pill__circ"><span class="ic">{{icon:arrow-right}}</span></span>
+      </a>
+    </div>
+    </div>
+  </div>
+  <div class="hero__bar">
+    <div class="feat" data-reveal="up" data-delay="0"><span class="ic feat__ic">{{icon:sofa}}</span><span class="feat__t"><span class="feat__a">Без оценки</span><span class="feat__b">Ты можешь быть собой</span></span></div>
+    <div class="feat" data-reveal="up" data-delay="120"><span class="ic feat__ic">{{icon:target}}</span><span class="feat__t"><span class="feat__a">Фокус на реальной жизни</span><span class="feat__b">Работаем с тем, что тебе важно</span></span></div>
+    <div class="feat" data-reveal="up" data-delay="240"><span class="ic feat__ic">{{icon:sprout}}</span><span class="feat__t"><span class="feat__a">В твоем темпе</span><span class="feat__b">Без спешки и дедлайнов</span></span></div>
+    <div class="feat" data-reveal="up" data-delay="360"><span class="ic feat__ic">{{icon:lock}}</span><span class="feat__t"><span class="feat__a">Конфеденциально</span><span class="feat__b">Все остается между нами</span></span></div>
+  </div>
+</section>
+
+<!-- HERO · TABLET LANDSCAPE (1025–1366px, coarse pointer) · reference 1366×1018 -->
+<section class="hero hero--tab-h" data-hero="tab-h">
+  <div class="hero__par" data-hero-par>
+    <div class="hero__mouse" data-hero-mouse>
+      <div class="hero__img" data-hero-img>
+        <img src="/assets/hero-cutout.png" alt="Екатерина Глебова" draggable="false" fetchpriority="high" decoding="async">
+      </div>
+    </div>
+  </div>
+  <a href="#top" class="hero__brand"><span class="nav__name">ЕКАТЕРИНА ГЛЕБОВА</span><span class="nav__role">ПСИХОЛОГ</span></a>
+  <div class="hero__text" data-hero-text>
+    <div class="hero__stack">
+    <h1 class="hero__h1">
+      <span class="hero__ln"><span data-line>Помогаю найти</span></span>
+      <span class="hero__ln"><span data-line class="accent">внутреннюю опору, лучше</span></span>
+      <span class="hero__ln"><span data-line><span class="accent">понять себя</span> и увереннее</span></span>
+      <span class="hero__ln"><span data-line>пройти период перемен</span></span>
+    </h1>
+    <p class="hero__lead" data-hero-fade>Если ты чувствуешь усталость от жизни, хочешь изменений, но не знаешь с чего начать, не обязательно справляться в одиночку</p>
+    <div class="hero__cta" data-hero-fade>
+      <a class="btn-pill btn-pill--hero" href="%VITE_TELEGRAM_URL%" target="_blank" rel="noopener" data-magnetic>
+        <span>Записаться на консультацию</span>
+        <span class="btn-pill__circ"><span class="ic">{{icon:arrow-right}}</span></span>
+      </a>
+    </div>
+    </div>
+  </div>
+  <div class="hero__bar">
+    <div class="feat"><span class="ic feat__ic">{{icon:sofa}}</span><span class="feat__t"><span class="feat__a">Без оценки</span><span class="feat__b">Ты можешь быть собой</span></span></div>
+    <div class="feat"><span class="ic feat__ic">{{icon:target}}</span><span class="feat__t"><span class="feat__a">Фокус на реальной жизни</span><span class="feat__b">Работаем с тем, что тебе важно</span></span></div>
+    <div class="feat"><span class="ic feat__ic">{{icon:sprout}}</span><span class="feat__t"><span class="feat__a">В твоем темпе</span><span class="feat__b">Без спешки и дедлайнов</span></span></div>
+    <div class="feat"><span class="ic feat__ic">{{icon:lock}}</span><span class="feat__t"><span class="feat__a">Конфеденциально</span><span class="feat__b">Все остается между нами</span></span></div>
+  </div>
+</section>
+
+<!-- HERO · TABLET PORTRAIT + MINI TABLET (600–1024px) · reference 1024×1519 -->
+<section class="hero hero--tab-v" data-hero="tab-v">
+  <div class="hero__par" data-hero-par>
+    <div class="hero__img" data-hero-img>
+      <img src="/assets/hero-cutout.png" alt="Екатерина Глебова" draggable="false" fetchpriority="high" decoding="async">
+    </div>
+  </div>
+  <div class="hero__head">
+    <a href="#top" class="hero__brand-name">ЕКАТЕРИНА ГЛЕБОВА</a>
+    <div class="hero__head-r">
+      <span class="hero__brand-role">ПСИХОЛОГ</span>
+      <button class="burger" type="button" aria-label="Открыть меню" data-open-menu><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="hero__panel" aria-hidden="true"></div>
+  <div class="hero__text hero__text--dark" data-hero-text>
+    <div class="hero__stack">
+    <h1 class="hero__h1">
+      <span class="hero__ln"><span data-line>Помогаю найти</span></span>
+      <span class="hero__ln"><span data-line class="accent">внутреннюю опору, лучше</span></span>
+      <span class="hero__ln"><span data-line><span class="accent">понять себя</span> и увереннее</span></span>
+      <span class="hero__ln"><span data-line>пройти период перемен</span></span>
+    </h1>
+    <p class="hero__lead" data-hero-fade>Если ты чувствуешь усталость от жизни, хочешь изменений, но не знаешь с чего начать, не обязательно справляться в одиночку</p>
+    <div class="hero__cta" data-hero-fade>
+      <a class="btn-solid" href="%VITE_TELEGRAM_URL%" target="_blank" rel="noopener">Записаться на консультацию</a>
+    </div>
+    </div>
+    <div class="hero__feats" data-hero-fade>
+      <div class="feat"><span class="ic feat__ic">{{icon:sofa}}</span><span class="feat__t"><span class="feat__a">Без оценки</span><span class="feat__b">Ты можешь быть собой</span></span></div>
+      <div class="feat"><span class="ic feat__ic">{{icon:target}}</span><span class="feat__t"><span class="feat__a">Фокус на реальности</span><span class="feat__b">Работаем с тем, что тебе важно</span></span></div>
+      <div class="feat"><span class="ic feat__ic">{{icon:lock}}</span><span class="feat__t"><span class="feat__a">Конфеденциально</span><span class="feat__b">Все остается между нами</span></span></div>
+      <div class="feat"><span class="ic feat__ic">{{icon:sprout}}</span><span class="feat__t"><span class="feat__a">В твоем темпе</span><span class="feat__b">Без спешки и дедлайнов</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HERO · PHONE (<600px) · reference 454×1104 -->
+<section class="hero hero--phone" data-hero="phone">
+  <div class="hero__par" data-hero-par>
+    <div class="hero__img" data-hero-img>
+      <img src="/assets/hero-cutout.png" alt="Екатерина Глебова" draggable="false" fetchpriority="high" decoding="async">
+    </div>
+  </div>
+  <div class="hero__head">
+    <a href="#top" class="hero__brand"><span class="nav__name">ЕКАТЕРИНА ГЛЕБОВА</span><span class="nav__role">ПСИХОЛОГ</span></a>
+    <button class="burger" type="button" aria-label="Открыть меню" data-open-menu><span></span><span></span></button>
+  </div>
+  <div class="hero__panel" aria-hidden="true"></div>
+  <div class="hero__text hero__text--dark" data-hero-text>
+    <div class="hero__stack">
+    <!-- Phone h1 wraps freely at a fixed size; &nbsp; keeps one-letter words off line ends. -->
+    <h1 class="hero__h1">Помогаю найти <span class="accent">внутреннюю&nbsp;опору, лучше понять себя</span> и&nbsp;увереннее пройти период перемен</h1>
+    <p class="hero__lead" data-hero-fade>Если ты чувствуешь усталость от жизни, хочешь изменений, но не знаешь с чего начать, не обязательно справляться в одиночку</p>
+    <div class="hero__cta" data-hero-fade>
+      <a class="btn-solid" href="%VITE_TELEGRAM_URL%" target="_blank" rel="noopener">Записаться на консультацию</a>
+    </div>
+    </div>
+    <div class="hero__feats" data-hero-fade>
+      <div class="feat"><span class="ic feat__ic">{{icon:sofa}}</span><span class="feat__t"><span class="feat__a">Без оценки</span><span class="feat__b">Ты можешь быть собой</span></span></div>
+      <div class="feat"><span class="ic feat__ic">{{icon:target}}</span><span class="feat__t"><span class="feat__a">Фокус на реальности</span><span class="feat__b">Работаем с тем, что тебе важно</span></span></div>
+      <div class="feat"><span class="ic feat__ic">{{icon:sprout}}</span><span class="feat__t"><span class="feat__a">В твоем темпе</span><span class="feat__b">Без спешки и дедлайнов</span></span></div>
+      <div class="feat"><span class="ic feat__ic">{{icon:lock}}</span><span class="feat__t"><span class="feat__a">Конфеденциально</span><span class="feat__b">Все остается между нами</span></span></div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /heroes -->
+
+<!-- PAIN -->
+<section id="pain" class="sec pain">
+  <div class="blob blob--pain" data-blob="2"></div>
+  <div class="wrap">
+    <div class="pain__head">
+      <h2 class="h2 pain__h2" data-reveal="up">Возможно, вы сталкиваетесь с похожими <span class="accent">чувствами, переживаниями</span> и мыслями:</h2>
+      <p class="pain__hint" data-reveal="up" data-delay="150">Наведите на карточку, чтобы задержаться на ней чуть дольше</p>
+    </div>
+    <div class="pain__grid">
+      <div data-reveal="up" data-delay="0"><div class="card pain__card" data-spot>
+        <h3>«Я тревожусь и не могу успокоиться»</h3>
+        <p>Нет чувства радости, частое беспокойство, напряжение, выгорание, раздражительность, потеря интереса к жизни</p>
+      </div></div>
+      <div data-reveal="up" data-delay="100"><div class="card pain__card" data-spot>
+        <h3>«Я постоянно себя критикую»</h3>
+        <p>Сравнение себя с другими, ощущение «недостаточности», «неправильности», сложно быть наедине с собой, недовольство внешностью и собой в целом</p>
+      </div></div>
+      <div data-reveal="up" data-delay="200"><div class="card pain__card" data-spot>
+        <h3>«У меня проблемы в отношениях»</h3>
+        <p>Не могу сказать «нет», выбираю неудачных партнеров, затрудняюсь говорить о своих чувствах, мне сложно доверять другим и быть собой</p>
+      </div></div>
+      <div data-reveal="up" data-delay="0"><div class="card pain__card" data-spot>
+        <h3>«Я все понимаю, но легче не становится»</h3>
+        <p>Нет сил и мотивации, усталость, чувство пустоты, потеря контакта с собой, ничего не меняется от понимания проблем</p>
+      </div></div>
+      <div data-reveal="up" data-delay="100"><div class="card pain__card" data-spot>
+        <h3>«Я не понимаю, чего хочу»</h3>
+        <p>Мне важно перестать жить «как надо» и понять, как хочется именно мне, выйти из тупика, научиться принимать решения</p>
+      </div></div>
+      <div data-reveal="up" data-delay="200"><div class="card pain__card" data-spot>
+        <h3>«Я потеряла опору и не знаю, куда двигаться»</h3>
+        <p>Страх совершить ошибку, страх будущего, состояние неопределенности, нехватки опоры и поддержки</p>
+      </div></div>
+    </div>
+    <div class="pain__cta-wrap" data-reveal="scale">
+      <div class="pain__cta">
+        <div class="pain__ring" data-ring></div>
+        <div class="pain__glow"></div>
+        <h3>Если вы узнали себя хотя бы в одном пункте, я могу вам помочь с этим в <span class="accent-l">личной терапии</span></h3>
+        <a class="btn-pill btn-pill--white" href="%VITE_TELEGRAM_URL%" target="_blank" rel="noopener" data-magnetic>
+          <span>Записаться на консультацию</span>
+          <span class="btn-pill__circ btn-pill__circ--accent"><span class="ic">{{icon:arrow-right}}</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="sec about">
+  <div class="blob blob--about" data-blob="0"></div>
+  <div class="wrap about__grid">
+    <div class="about__col">
+      <div class="eyebrow" data-reveal="up"><span></span>Обо мне</div>
+      <h2 class="h2 about__h2" data-reveal="up">Я Екатерина Глебова, <span class="accent">клинический психолог</span></h2>
+      <div class="about__text" data-reveal="up" data-delay="100">
+        <p>Я всегда мечтала помогать людям, раскрывать их внутренний потенциал, поддерживать в периоды кризисов. Мне важна не столько проблема, сколько сам человек со своей уникальной историей, а также то, как именно вы пришли к точке, где одному справляться уже трудно.</p>
+        <p>Я умею работать бережно, но при этом глубоко. В терапии со мной клиенты учатся лучше замечать себя и свои чувства, потребности, ощущения. В их историях становится больше жизни и бережного отношения к себе, к своим эмоциям и желаниям. Моя сильная сторона — работа с эмоциями, а также умение видеть ресурс даже в непростых ситуациях.</p>
+      </div>
+      <h3 class="about__h3" data-reveal="up">Мой подход</h3>
+      <div class="approach">
+        <div data-reveal="up" data-delay="0"><div class="card approach__card" data-spot>
+          <span class="approach__t">Бережность</span><span class="approach__d">Отношусь к вашим переживаниям и чувствам внимательно, на встречах вам можно быть собой настоящим</span>
+        </div></div>
+        <div data-reveal="up" data-delay="100"><div class="card approach__card" data-spot>
+          <span class="approach__t">Без оценки</span>
+          <span class="approach__d">Создаю безопасное пространство, где можно говорить о самом важном без тревоги и неловкости</span>
+        </div></div>
+        <div data-reveal="up" data-delay="0"><div class="card approach__card" data-spot>
+          <span class="approach__t">В вашем темпе</span>
+          <span class="approach__d">Учитываю ваш индивидуальный ритм, не заставляю говорить о том, о чем вам пока не хочется</span>
+        </div></div>
+        <div data-reveal="up" data-delay="100"><div class="card approach__card" data-spot>
+          <span class="approach__t">Фокус на изменениях</span>
+          <span class="approach__d">На каждой консультации мы последовательно работаем над разрешением вашего запроса</span>
+        </div></div>
+      </div>
+    </div>
+    <div class="about__photo-col sticky">
+      <div class="photo about__photo" data-reveal="clip">
+        <div class="photo__par" data-par>
+          <picture>
+            <source media="(min-width: 600px) and (max-width: 1024px)" srcset="/assets/about-tablet.jpg">
+            <img src="/assets/about.jpg" alt="Екатерина Глебова" loading="lazy" decoding="async">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUESTS -->
+<section id="requests" class="hsec requests" data-hsec>
+  <div class="hsec__sticky">
+    <div class="blob blob--req" data-blob="1"></div>
+    <div class="wrap hsec__head">
+      <h2 class="h2 requests__h2">С какими запросами <span class="accent-l requests__h2-b">я могу помочь</span></h2>
+    </div>
+    <div class="htrack" data-htrack>
+      <div class="hcard hcard--terra">
+        <span class="hcard__ic"><span class="ic">{{icon:battery-low}}</span></span>
+        <span class="hcard__t">Неудовлетворенность жизнью</span>
+        <span class="hcard__d">Выгорание, сниженное настроение, тревога, напряженность, отсутствие сил и мотивации, потеря интереса и радости, трудности с выражением эмоций</span>
+      </div>
+      <div class="hcard hcard--cream">
+        <span class="hcard__ic"><span class="ic">{{icon:circle-help}}</span></span>
+        <span class="hcard__t">Непонимание себя</span>
+        <span class="hcard__d">Сложно понять, чего хочется, в каком направлении развиваться, трудно ответить на вопрос о том «какой(ая) я и что мне на самом деле важно»</span>
+      </div>
+      <div class="hcard hcard--light-terra">
+        <span class="hcard__ic"><span class="ic">{{icon:user-round}}</span></span>
+        <span class="hcard__t">Непринятие себя</span>
+        <span class="hcard__d">Критика и недовольство собой, своим телом, ощущение собственной «недостаточности», низкая самооценка, сравнение себя с другими, сложности с доверием себе</span>
+      </div>
+      <div class="hcard hcard--deep">
+        <span class="hcard__ic"><span class="ic">{{icon:heart-crack}}</span></span>
+        <span class="hcard__t">Трудности в отношениях</span>
+        <span class="hcard__d">Недопонимание, ревность, выбор неудачных партнеров, потеря себя в отношениях</span>
+      </div>
+      <div class="hcard hcard--peach">
+        <span class="hcard__ic"><span class="ic">{{icon:house}}</span></span>
+        <span class="hcard__t">Конфликты с родителями</span>
+        <span class="hcard__d">Недопонимание, обида, трудности в общении, невозможность «отсоединиться» от родителей</span>
+      </div>
+      <div class="hcard hcard--dark">
+        <span class="hcard__ic"><span class="ic">{{icon:shuffle}}</span></span>
+        <span class="hcard__t">Переживание перемен и неопределенности</span>
+        <span class="hcard__d">Ощущение потери опоры и ориентиров, трудности адаптации в новом месте, сложности с принятием решений</span>
+      </div>
+    </div>
+    <div class="wrap"><div class="hbar"><div data-hbar></div></div></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="process">
+  <div class="process__in">
+    <div class="wrap process__grid">
+      <div class="sticky">
+        <div class="photo process__photo" data-reveal="clip">
+          <img src="/assets/chair.jpg" alt="Екатерина Глебова в кресле" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <div>
+        <h2 class="h2 process__h2" data-reveal="up">Как мы работаем <span class="accent">в терапии</span></h2>
+        <div class="steps" data-steps>
+          <div class="steps__track" data-steps-track></div>
+          <div class="steps__line" data-steps-line></div>
+          <div class="step" data-step>
+            <span class="step__dot" data-stepdot></span>
+            <div class="step__card"><div class="step__head"><span class="step__n">1</span><span class="step__t">Знакомство и диагностика ситуации</span></div>
+            <p>Вы в свободной форме рассказываете, что привело вас на консультацию, какие способы решения проблемы вы уже пробовали. Мы оцениваем ваше актуальное состояние, а также описываем результат, к которому хочется прийти.</p></div>
+          </div>
+          <div class="step" data-step>
+            <span class="step__dot" data-stepdot></span>
+            <div class="step__card"><div class="step__head"><span class="step__n">2</span><span class="step__t">Определяем фокус и приоритеты</span></div>
+            <p>Мы вместе формулируем запросы, мишени работы и начинаем процесс терапии. Это выглядит так: на каждой встрече мы беседуем по той теме, которая актуальна вам в рамках запроса. Я работаю гибко без строгих протоколов, но направляю вас и структурирую процесс. Бывает так, что запрос постепенно меняется, это нормально, мы продолжаем работу как единый процесс.</p></div>
+          </div>
+          <div class="step" data-step>
+            <span class="step__dot" data-stepdot></span>
+            <div class="step__card"><div class="step__head"><span class="step__n">3</span><span class="step__t">Процесс терапии</span></div>
+            <p>Я наблюдаю за вашим состоянием, мы можем обсуждать любые проблемы и чувства, возникшие в процессе нашей работы. На консультации я могу предложить техники и упражнения, чтобы получить опыт, который мы потом подробно обсуждаем.</p></div>
+          </div>
+          <div class="step step--last" data-step>
+            <span class="step__dot" data-stepdot></span>
+            <div class="step__card"><div class="step__head"><span class="step__n">4</span><span class="step__t">Поддержка изменений</span></div>
+            <p>Одного часа в кабинете редко бывает достаточно для устойчивых изменений, поэтому я предлагаю мини-задания, которые вы можете выполнять за рамками кабинета, постепенно внедряя изменения в свой привычный жизненный уклад.</p></div>
+          </div>
+        </div>
+        <div class="bordo-wrap" data-reveal="up">
+          <div class="bordo">
+            <div class="bordo__glow"></div>
+            <span class="bordo__t">Первый шаг — одна встреча</span>
+            <a class="btn-pill btn-pill--white" href="%VITE_TELEGRAM_URL%" target="_blank" rel="noopener" data-magnetic>
+              <span>Записаться на консультацию</span>
+              <span class="btn-pill__circ btn-pill__circ--dark"><span class="ic">{{icon:arrow-right}}</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="hsec results" data-hsec>
+  <div class="hsec__sticky">
+    <div class="wrap hsec__head results__head">
+      <h2 class="h2 results__h2">Сферы, в которых мои клиенты получают <span class="accent-l">изменения</span> после совместной работы</h2>
+    </div>
+    <div class="htrack" data-htrack>
+      <div class="hcard hcard--cream">
+        <span class="hcard__ic"><span class="ic">{{icon:eye}}</span></span>
+        <div class="hcard__body"><span class="hcard__t">Понимание себя</span><span class="hcard__d">Научились лучше распознавать и замечать свои чувства, ориентироваться на них, доверять себе, понимать причины своих эмоций и как с ними быть.</span></div>
+      </div>
+      <div class="hcard hcard--light-terra">
+        <span class="hcard__ic"><span class="ic">{{icon:messages-square}}</span></span>
+        <div class="hcard__body"><span class="hcard__t">Новый способ коммуникации</span><span class="hcard__d">Обрели навык общения с другими с опорой на свои границы, научились вступать в контакт спокойно и уверенно, без потребности защищаться.</span></div>
+      </div>
+      <div class="hcard hcard--terra">
+        <span class="hcard__ic"><span class="ic">{{icon:heart-handshake}}</span></span>
+        <div class="hcard__body"><span class="hcard__t">Бережное отношение<br>к себе</span><span class="hcard__d">Научились принятию разных сторон своей личности, выстроили понимающий и поддерживающий внутренний диалог с собой вместо критики.</span></div>
+      </div>
+      <div class="hcard hcard--dark">
+        <span class="hcard__ic"><span class="ic">{{icon:sparkles}}</span></span>
+        <div class="hcard__body"><span class="hcard__t">Познание себя <br>и раскрытие потенциала</span><span class="hcard__d">Исследовали свои сильные стороны и ценности, поняли, что им действительно нравится, научились мечтать и ставить цели. Укрепили самооценку и почувствовали стремление менять свою жизнь к лучшему.</span></div>
+      </div>
+      <div class="hcard hcard--deep">
+        <span class="hcard__ic"><span class="ic">{{icon:anchor}}</span></span>
+        <div class="hcard__body"><span class="hcard__t">Опора на себя <br>и доверие себе</span><span class="hcard__d">Развили навык ориентироваться в первую очередь на свои ощущения при принятии решений, снизили напряжение перед ответственностью, смогли почувствовать себя авторами своей жизни.</span></div>
+      </div>
+      <div class="hcard hcard--peach">
+        <span class="hcard__ic"><span class="ic">{{icon:sun}}</span></span>
+        <div class="hcard__body"><span class="hcard__t">Появление интереса <br>к себе и к жизни</span><span class="hcard__d">Разблокировали возможность испытывать разные чувства и выдерживать их, научились относиться к себе с любопытством и пониманием, нашли в себе смелость выстраивать уникальный жизненный путь.</span></div>
+      </div>
+    </div>
+    <div class="wrap"><div class="hbar"><div data-hbar></div></div></div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise" class="expertise">
+  <div class="expertise__in">
+    <div class="blob blob--exp" data-blob="0"></div>
+    <div class="wrap expertise__grid">
+      <div>
+        <h2 class="h2 expertise__h2" data-reveal="up">Вы можете доверять <span class="accent">моей экспертности</span></h2>
+        <div class="stats">
+          <div class="stat" data-reveal="up" data-delay="0"><span class="stat__n"><span data-count="4">4</span></span><span class="stat__d">года частной практики</span></div>
+          <div class="stat" data-reveal="up" data-delay="100"><span class="stat__n"><span data-count="600">600</span></span><span class="stat__d">часов дополнительного обучения</span></div>
+          <div class="stat" data-reveal="up" data-delay="200"><span class="stat__n"><span data-count="30">30</span><span class="accent">+</span></span><span class="stat__d">публичных тренингов и лекций</span></div>
+          <div class="stat" data-reveal="up" data-delay="0"><span class="stat__n"><span data-count="5">5</span></span><span class="stat__d">публикаций в научных журналах</span></div>
+          <div class="stat" data-reveal="up" data-delay="100"><span class="stat__n"><span data-count="5,5">5,5</span></span><span class="stat__d">лет обучения в медицинском ВУЗе</span></div>
+          <div class="stat" data-reveal="up" data-delay="200"><span class="stat__n"><span data-count="7">7</span><span class="accent">+</span></span><span class="stat__d">лет в личной терапии</span></div>
+        </div>
+      </div>
+      <div class="gallery">
+        <div class="photo gallery__item" data-reveal="clip" data-delay="0"><img src="/assets/g1.png" alt="Екатерина Глебова" loading="lazy" decoding="async"></div>
+        <div class="photo gallery__item" data-reveal="clip" data-delay="120"><img src="/assets/g2.png" alt="Екатерина Глебова" loading="lazy" decoding="async"></div>
+        <div class="photo gallery__item" data-reveal="clip" data-delay="240"><img src="/assets/g3.png" alt="Екатерина Глебова" loading="lazy" decoding="async"></div>
+        <div class="photo gallery__item" data-reveal="clip" data-delay="360"><img src="/assets/g4.png" alt="Екатерина Глебова" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__in" data-marquee="38000">
+    <span class="marquee__row"><span>Бережность</span><span class="accent">✦</span><span class="accent">без оценки</span><span class="accent">✦</span><span>в вашем темпе</span><span class="accent">✦</span><span class="accent">конфиденциально</span><span class="accent">✦</span><span>фокус на изменениях</span><span class="accent">✦</span></span>
+    <span class="marquee__row"><span>Бережность</span><span class="accent">✦</span><span class="accent">без оценки</span><span class="accent">✦</span><span>в вашем темпе</span><span class="accent">✦</span><span class="accent">конфиденциально</span><span class="accent">✦</span><span>фокус на изменениях</span><span class="accent">✦</span></span>
+  </div>
+</div>
+
+<!-- PRICES -->
+<section id="prices" class="sec prices">
+  <div class="blob blob--prices" data-blob="1"></div>
+  <div class="wrap">
+    <h2 class="h2 prices__h2" data-reveal="up">Форматы <span class="accent">и стоимость</span></h2>
+    <div class="prices__grid">
+      <div data-reveal="up" data-delay="0"><div class="price price--light">
+        <div class="price__head"><h3>Первая консультация</h3><span class="price__tag">50–55 минут · онлайн или очно</span></div>
+        <div class="price__body">
+          <p>На первой встрече мы знакомимся и говорим о том, что вас беспокоит. Мне важно узнать о вас и вашем запросе как можно больше, а вам понять — комфортно ли, хочется ли продолжать совместную работу.</p>
+          <p>Мы не идем в глубину, но я помогаю сформулировать запрос и мишени работы, а также составляю рекомендации.</p>
+        </div>
+        <div class="price__foot"><span class="price__sum">3000 ₽</span><span class="price__per">/ час</span></div>
+      </div></div>
+      <div data-reveal="up" data-delay="120"><div class="price price--dark">
+        <div class="price__glow"></div>
+        <div class="price__head"><h3>Индивидуальная терапия</h3><span class="price__tag">регулярные встречи</span></div>
+        <div class="price__body">
+          <p>Это регулярные консультации, на которых мы работаем по вашему актуальному запросу, без следования строгому протоколу.</p>
+          <p>Работа строится гибко с ориентацией на ваши индивидуальные потребности, на встречах я предлагаю упражнения или техники, после выполнения которых мы подробно обсуждаем процесс, ваши чувства и мысли. Также вы получаете домашние задания, которые помогают мягко внедрить изменения в вашу повседневную жизнь.</p>
+        </div>
+        <div class="price__foot"><span class="price__sum">3000 ₽</span><span class="price__per">/ час</span></div>
+      </div></div>
+    </div>
+    <div class="offer-wrap" data-reveal="up">
+      <div class="offer">
+        <p>Не знаете, какой формат выбрать? Начните с первой встречи — мы определим его вместе.</p>
+        <a class="btn-pill btn-pill--offer" href="%VITE_TELEGRAM_URL%" target="_blank" rel="noopener" data-magnetic>
+          <span>Узнать доступные опции</span><span class="btn-pill__circ"><span class="ic">{{icon:arrow-right}}</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="sec reviews">
+  <div class="blob blob--rev" data-blob="0"></div>
+  <div class="wrap">
+    <div class="reviews__head">
+      <h2 class="h2" data-reveal="up">Отзывы <span class="accent">клиентов</span></h2>
+      <div class="reviews__arrows" data-reveal="up" data-delay="120">
+        <button class="arrow" type="button" aria-label="Назад" data-rev-prev><span class="ic">{{icon:arrow-left}}</span></button>
+        <button class="arrow" type="button" aria-label="Вперед" data-rev-next><span class="ic">{{icon:arrow-right}}</span></button>
+      </div>
+    </div>
+  </div>
+  <!-- TODO: replace each placeholder with <img src="/assets/reviews/review-N.jpg" alt="Отзыв клиента"> once the screenshots arrive. -->
+  <div class="reviews__track" data-reviews>
+    <div class="review" data-reveal="up" data-delay="0"><div class="review__ph">Скриншот отзыва 1</div></div>
+    <div class="review" data-reveal="up" data-delay="100"><div class="review__ph">Скриншот отзыва 2</div></div>
+    <div class="review" data-reveal="up" data-delay="200"><div class="review__ph">Скриншот отзыва 3</div></div>
+    <div class="review" data-reveal="up" data-delay="300"><div class="review__ph">Скриншот отзыва 4</div></div>
+    <div class="review" data-reveal="up" data-delay="400"><div class="review__ph">Скриншот отзыва 5</div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="sec faq">
+  <div class="blob blob--faq1" data-blob="2"></div>
+  <div class="blob blob--faq2" data-blob="0"></div>
+  <div class="wrap faq__grid">
+    <div class="faq__intro sticky">
+      <h2 class="h2" data-reveal="up">Частые <span class="accent">вопросы</span></h2>
+      <p data-reveal="up" data-delay="100">Если вашего вопроса здесь нет, задайте его при записи — я отвечу лично.</p>
+    </div>
+    <div class="faq__list">
+      <div class="faq-item is-open" data-faq>
+        <button type="button" class="faq-item__q" aria-expanded="true"><span class="faq-item__qt"><span class="faq-item__n">01</span><span>Как проходит первая встреча?</span></span><span class="faq-item__ic"><span></span><span></span></span></button>
+        <div class="faq-item__a"><div><p>Мы знакомимся и говорим о том, что вас беспокоит. Это возможность понять, комфортно ли вам и хочется ли продолжать совместную работу. Я помогу сформулировать запрос и дам рекомендации.</p></div></div>
+      </div>
+      <div class="faq-item" data-faq>
+        <button type="button" class="faq-item__q" aria-expanded="false"><span class="faq-item__qt"><span class="faq-item__n">02</span><span>Сколько встреч понадобится?</span></span><span class="faq-item__ic"><span></span><span></span></span></button>
+        <div class="faq-item__a"><div><p>Это зависит от вашего запроса. Иногда достаточно нескольких консультаций, иногда работа длится дольше. Мы регулярно сверяемся с целями и вместе решаем, как двигаться дальше.</p></div></div>
+      </div>
+      <div class="faq-item" data-faq>
+        <button type="button" class="faq-item__q" aria-expanded="false"><span class="faq-item__qt"><span class="faq-item__n">03</span><span>Как часто нужно встречаться?</span></span><span class="faq-item__ic"><span></span><span></span></span></button>
+        <div class="faq-item__a"><div><p>Обычно раз в неделю. Такой ритм помогает сохранять контакт с процессом и постепенно внедрять изменения в повседневную жизнь.</p></div></div>
+      </div>
+      <div class="faq-item" data-faq>
+        <button type="button" class="faq-item__q" aria-expanded="false"><span class="faq-item__qt"><span class="faq-item__n">04</span><span>Онлайн или очно?</span></span><span class="faq-item__ic"><span></span><span></span></span></button>
+        <div class="faq-item__a"><div><p>Можно в любом формате. Встреча длится 50–55 минут, онлайн-сессии проходят по видеосвязи в удобное для вас время.</p></div></div>
+      </div>
+      <div class="faq-item" data-faq>
+        <button type="button" class="faq-item__q" aria-expanded="false"><span class="faq-item__qt"><span class="faq-item__n">05</span><span>Что, если мне сложно говорить о себе?</span></span><span class="faq-item__ic"><span></span><span></span></span></button>
+        <div class="faq-item__a"><div><p>Это нормально. Я не заставляю говорить о том, о чем вам пока не хочется: мы двигаемся в вашем темпе.</p></div></div>
+      </div>
+      <div class="faq-item" data-faq>
+        <button type="button" class="faq-item__q" aria-expanded="false"><span class="faq-item__qt"><span class="faq-item__n">06</span><span>Это конфиденциально?</span></span><span class="faq-item__ic"><span></span><span></span></span></button>
+        <div class="faq-item__a"><div><p>Да. Все, что вы рассказываете на встречах, остается между нами.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="contact" class="contact">
+  <div class="contact__in">
+    <div class="contact__glow" data-glow></div>
+    <div class="wrap contact__grid">
+      <div>
+        <h2 class="contact__h2" data-reveal="up">Давайте начнем <span class="accent-l">с одной встречи</span></h2>
+        <p class="contact__p" data-reveal="up" data-delay="100">Вы можете прийти с вопросами, сомнениями и даже с пониманием, что пока не знаете, с чего начать.</p>
+        <div class="contact__cta" data-reveal="up" data-delay="200">
+          <a class="btn-pill btn-pill--contact" href="%VITE_TELEGRAM_URL%" target="_blank" rel="noopener" data-magnetic>
+            <span>Записаться на консультацию</span>
+            <span class="btn-pill__circ btn-pill__circ--white"><span class="ic">{{icon:arrow-right}}</span></span>
+          </a>
+          <span class="contact__meta"><span>Онлайн</span><span class="dot"></span><span>60 минут</span><span class="dot"></span><span>Конфиденциально</span></span>
+        </div>
+      </div>
+      <div class="contact__photo-col">
+        <div class="photo contact__photo" data-reveal="clip">
+          <img src="/assets/contact.png" alt="Екатерина Глебова" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+    <div class="contact__marquee" aria-hidden="true">
+      <div class="contact__marquee-in" data-marquee="60000">
+        <span>Екатерина Глебова · психолог ·</span><span>Екатерина Глебова · психолог ·</span>
+      </div>
+    </div>
+    <footer class="footer">
+      <span>© 2026 Екатерина Глебова, клинический психолог</span>
+      <div class="footer__links">
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="#top">Наверх ↑</a>
+      </div>
+    </footer>
+  </div>
+</section>
+
+</div><!-- /#page -->
+
+<!-- FIXED UI LAYER (portrait + phone): floating burger after the hero + full-screen menu -->
+<div class="fixed-layer">
+  <button class="fab" type="button" aria-label="Открыть меню" data-open-menu><span></span><span></span></button>
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__head">
+      <span class="menu__brand">ЕКАТЕРИНА ГЛЕБОВА</span>
+      <button class="menu__close" type="button" aria-label="Закрыть меню" data-close-menu><span class="ic">{{icon:x}}</span></button>
+    </div>
+    <nav class="menu__nav">
+      <a href="#about" data-close-menu><span>Обо мне</span><span>01</span></a>
+      <a href="#requests" data-close-menu><span>Запросы</span><span>02</span></a>
+      <a href="#prices" data-close-menu><span>Условия</span><span>03</span></a>
+      <a href="#reviews" data-close-menu><span>Отзывы</span><span>04</span></a>
+    </nav>
+    <a class="btn-solid menu__cta" href="%VITE_TELEGRAM_URL%" target="_blank" rel="noopener" data-close-menu>Записаться на консультацию</a>
+  </div>
+</div>
+
+<div class="cursor" aria-hidden="true"></div>
+
+<!-- INTRO -->
+<div class="intro" aria-hidden="true">
+  <div class="intro__in">
+    <div class="intro__name">
+      <span class="intro__w"><span data-iw>Екатерина</span></span>
+      <span class="intro__w"><span data-iw class="accent-l">Глебова</span></span>
+    </div>
+    <span class="intro__line" data-il></span>
+    <span class="intro__w"><span data-iw class="intro__role">клинический психолог</span></span>
+  </div>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

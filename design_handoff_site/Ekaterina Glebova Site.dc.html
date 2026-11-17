@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:#ebe8e1;color:#2a2a28;font-family:Onest,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#a3502c;text-decoration:none}
+a:hover{color:#2a2a28}
+::selection{background:#a3502c;color:#fff}
+input,button{font-family:inherit}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="position:relative;overflow-x:clip;background:#ebe8e1;font-family:Onest,system-ui,sans-serif;color:#2a2a28">
+
+<div ref="{{ progRef }}" style="position:fixed;top:0;left:0;right:0;height:2px;background:#a3502c;transform-origin:0 50%;transform:scaleX(0);z-index:60"></div>
+
+<sc-if value="{{ showNav }}" hint-placeholder-val="{{ true }}">
+<nav ref="{{ navRef }}" style="position:fixed;top:0;left:0;right:0;z-index:50;transition:background .5s,backdrop-filter .5s,box-shadow .5s,padding .5s;padding:2.7vw 0">
+  <div style="padding:0 8.9vw 0 4.83vw;display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap">
+    <a href="#top" style="display:flex;align-items:baseline;gap:.95vw;color:#2e2e2e;font-size:max(13px,1.3vw);white-space:nowrap;line-height:1.2">
+      <span style="font-weight:600;letter-spacing:.05em">ЕКАТЕРИНА ГЛЕБОВА</span><span style="font-weight:300;letter-spacing:.09em;color:#555">ПСИХОЛОГ</span>
+    </a>
+    <div style="display:flex;gap:4.9vw;flex-wrap:wrap;font-size:max(13px,1.24vw);font-weight:300;letter-spacing:.03em;line-height:1.2">
+      <a href="#about" style="color:#3d3d3d;transition:color .3s" style-hover="color:#a3502c">Обо мне</a>
+      <a href="#requests" style="color:#3d3d3d;transition:color .3s" style-hover="color:#a3502c">Запросы</a>
+      <a href="#prices" style="color:#3d3d3d;transition:color .3s" style-hover="color:#a3502c">Условия</a>
+      <a href="#reviews" style="color:#3d3d3d;transition:color .3s" style-hover="color:#a3502c">Отзывы</a>
+    </div>
+  </div>
+</nav>
+</sc-if>
+
+<!-- PAGE STAGE: full-width in Auto; whole page framed at a fixed device width when the "Устройство" tweak is set. All sizes use cqw of #page-wrap. -->
+<div style="background:{{ stageBg }};padding:{{ stagePad }};min-height:{{ stageMinH }};display:flex;flex-direction:column;align-items:center;gap:14px">
+<sc-if value="{{ isPreview }}" hint-placeholder-val="{{ false }}">
+  <div style="font-size:13px;letter-spacing:.06em;color:#4a4743;font-weight:500;white-space:nowrap">{{ previewLabel }}</div>
+</sc-if>
+<div id="page-wrap" style="position:relative;container-type:inline-size;overflow:clip;background:#ebe8e1;width:{{ wrapW }};max-width:100%;border-radius:{{ wrapRadius }};box-shadow:{{ wrapShadow }}">
+<sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}">
+<!-- HERO · DESKTOP (>1366px or fine pointer ≥1025px) · reference 1553×988, units in cqw of #hero-wrap -->
+<section id="top" style="position:relative;height:63.62cqw;overflow:hidden;background:linear-gradient(90deg,#d3d0c5 0%,#dbd8ce 20%,#e3e0d8 45%,#e9e6df 68%,#ebe9e2 100%)">
+  <div ref="{{ heroParRef }}" style="position:absolute;left:34.22cqw;top:-11.86cqw;width:75.34cqw;height:75.3cqw;will-change:transform">
+    <div ref="{{ heroMouseRef }}" style="position:absolute;inset:0;will-change:transform">
+      <div data-hero-img="" style="position:absolute;inset:0">
+        <div aria-hidden="true" style="position:absolute;left:18%;top:20%;width:64%;height:56%;border-radius:50%;background:radial-gradient(closest-side,rgba(58,50,42,.34) 0%,rgba(58,50,42,.22) 45%,rgba(58,50,42,.08) 75%,rgba(58,50,42,0) 100%);pointer-events:none"></div>
+        <img src="assets/hero-cutout.png" alt="Екатерина Глебова" draggable="false" style="position:relative;display:block;width:100%;height:100%;object-fit:contain;background:none">
+      </div>
+    </div>
+  </div>
+  <div ref="{{ heroTextRef }}" style="position:absolute;inset:0;z-index:3;pointer-events:none">
+    <h1 style="position:absolute;left:4.83cqw;top:14.3cqw;margin:0;font-weight:600;font-size:3.25cqw;line-height:1.08;color:#3d3d3d;white-space:nowrap">
+      <span style="display:block;overflow:hidden;padding-bottom:.06em"><span data-line="" style="display:block">Помогаю женщинам</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.06em"><span data-line="" style="display:block">вернуть <span style="color:#a3502c">контакт с собой</span>,</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.06em"><span data-line="" style="display:block">свои желания и вырастить</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.06em"><span data-line="" style="display:block;color:#a3502c">внутреннюю опору</span></span>
+    </h1>
+    <p data-hero-fade="" style="position:absolute;left:4.5cqw;top:41.2cqw;width:19.2cqw;margin:0;font-size:max(12px,1.13cqw);line-height:1.38;color:#3a3a3a;font-weight:400">Если ты чувствуешь усталость от жизни, хочешь изменений, но не знаешь с чего начать, не обязательно справляться в одиночку</p>
+    <div data-hero-fade="" style="position:absolute;left:24.73cqw;top:42.43cqw;pointer-events:auto">
+      <button onClick="{{ openModal }}" data-magnetic="" style="display:flex;align-items:center;gap:1.6cqw;height:4.96cqw;min-height:44px;padding:0 .5cqw 0 1.8cqw;border:2px solid #111;border-radius:999px;background:#1d1d1d;color:#fff;font-size:max(12px,1.13cqw);font-weight:400;cursor:pointer;white-space:nowrap;transition:transform .5s cubic-bezier(.16,1,.3,1),background .4s,box-shadow .4s" style-hover="background:#2b2b2a;box-shadow:0 18px 40px rgba(20,20,20,.25)">
+        <span>Записаться на консультацию</span>
+        <span style="width:4cqw;height:4cqw;min-width:36px;min-height:36px;border-radius:50%;background:#8c4425;display:grid;place-items:center">
+          <span style="width:52%;height:52%;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:55.05cqw;bottom:0;z-index:5;background:linear-gradient(90deg,#191918 0%,#1b1b1a 72%,#22191a 100%);color:#fff;display:grid;grid-template-columns:21.18cqw 27.37cqw 21.57cqw auto;align-items:center;padding-left:4.38cqw">
+    <div data-reveal="up" data-delay="0" style="display:flex;align-items:center;gap:1cqw">
+      <span style="flex:none;width:3.35cqw;height:3.35cqw;background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sofa.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sofa.svg) center/contain no-repeat"></span>
+      <span style="display:flex;flex-direction:column;gap:.3cqw;white-space:nowrap"><span style="font-size:max(12px,1.45cqw);font-weight:400">Без оценки</span><span style="font-size:max(10px,1.18cqw);color:#8a8986;font-weight:300">Ты можешь быть собой</span></span>
+    </div>
+    <div data-reveal="up" data-delay="120" style="display:flex;align-items:center;gap:1cqw">
+      <span style="flex:none;width:3.35cqw;height:3.35cqw;background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/target.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/target.svg) center/contain no-repeat"></span>
+      <span style="display:flex;flex-direction:column;gap:.3cqw;white-space:nowrap"><span style="font-size:max(12px,1.45cqw);font-weight:400">Фокус на реальной жизни</span><span style="font-size:max(10px,1.18cqw);color:#8a8986;font-weight:300">Работаем с тем, что тебе важно</span></span>
+    </div>
+    <div data-reveal="up" data-delay="240" style="display:flex;align-items:center;gap:1cqw">
+      <span style="flex:none;width:3.35cqw;height:3.35cqw;background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sprout.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sprout.svg) center/contain no-repeat"></span>
+      <span style="display:flex;flex-direction:column;gap:.3cqw;white-space:nowrap"><span style="font-size:max(12px,1.45cqw);font-weight:400">В твоем темпе</span><span style="font-size:max(10px,1.18cqw);color:#8a8986;font-weight:300">Без спешки и дедлайнов</span></span>
+    </div>
+    <div data-reveal="up" data-delay="360" style="display:flex;align-items:center;gap:1cqw">
+      <span style="flex:none;width:3.35cqw;height:3.35cqw;background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/lock.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/lock.svg) center/contain no-repeat"></span>
+      <span style="display:flex;flex-direction:column;gap:.3cqw;white-space:nowrap"><span style="font-size:max(12px,1.45cqw);font-weight:400">Конфеденциально</span><span style="font-size:max(10px,1.18cqw);color:#8a8986;font-weight:300">Все остается между нами</span></span>
+    </div>
+  </div>
+</section>
+</sc-if>
+<sc-if value="{{ isTabH }}" hint-placeholder-val="{{ false }}">
+<!-- HERO · TABLET LANDSCAPE (1025–1366px, coarse pointer) · reference 1366×1018, units in cqw -->
+<section id="top" data-screen-label="Hero · Tablet landscape" style="position:relative;height:74.52cqw;overflow:hidden;background:linear-gradient(90deg,#d3d0c5 0%,#dbd8ce 20%,#e3e0d8 45%,#e9e6df 68%,#ebe9e2 100%)">
+  <div ref="{{ heroParRef }}" style="position:absolute;left:27.58cqw;top:-15.92cqw;width:94.85cqw;height:95.12cqw;will-change:transform">
+    <div ref="{{ heroMouseRef }}" style="position:absolute;inset:0;will-change:transform">
+      <div data-hero-img="" style="position:absolute;inset:0"><div aria-hidden="true" style="position:absolute;left:18%;top:20%;width:64%;height:56%;border-radius:50%;background:radial-gradient(closest-side,rgba(58,50,42,.34) 0%,rgba(58,50,42,.22) 45%,rgba(58,50,42,.08) 75%,rgba(58,50,42,0) 100%);pointer-events:none"></div>
+        <img src="assets/hero-cutout.png" alt="Екатерина Глебова" draggable="false" style="position:relative;display:block;width:100%;height:100%;object-fit:contain;background:none"></div>
+    </div>
+  </div>
+  <a href="#top" style="position:absolute;left:2.93cqw;top:3.2cqw;z-index:6;display:flex;align-items:baseline;gap:1.6cqw;color:#2e2e2e;font-size:1.9cqw;line-height:1.2;white-space:nowrap">
+    <span style="font-weight:600;letter-spacing:.05em">ЕКАТЕРИНА ГЛЕБОВА</span><span style="font-weight:300;letter-spacing:.09em;color:#555">ПСИХОЛОГ</span>
+  </a>
+  <div ref="{{ heroTextRef }}" style="position:absolute;inset:0;z-index:3;pointer-events:none">
+    <h1 style="position:absolute;left:2.85cqw;top:14.6cqw;margin:0;font-weight:600;font-size:3.4cqw;line-height:1.03;color:#3d3d3d;white-space:nowrap">
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-line="" style="display:block">Помогаю женщинам</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-line="" style="display:block">вернуть <span style="color:#a3502c">контакт с собой</span>,</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-line="" style="display:block">свои желания и вырастить</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-line="" style="display:block;color:#a3502c">внутреннюю опору</span></span>
+    </h1>
+    <p data-hero-fade="" style="position:absolute;left:2.85cqw;top:33.6cqw;width:28.6cqw;margin:0;font-size:1.76cqw;line-height:1.33;color:#555;font-weight:400">Если ты чувствуешь усталость от жизни, хочешь изменений, но не знаешь с чего начать, не обязательно справляться в одиночку</p>
+    <div data-hero-fade="" style="position:absolute;left:2.34cqw;top:50.1cqw;pointer-events:auto">
+      <button onClick="{{ openModal }}" data-magnetic="" style="display:flex;align-items:center;gap:1.6cqw;height:5.6cqw;min-height:48px;padding:0 .5cqw 0 1.9cqw;border:2px solid #111;border-radius:999px;background:#1d1d1d;color:#fff;font-size:max(13px,1.3cqw);font-weight:400;cursor:pointer;white-space:nowrap;transition:transform .5s cubic-bezier(.16,1,.3,1),background .4s,box-shadow .4s" style-hover="background:#2b2b2a;box-shadow:0 18px 40px rgba(20,20,20,.25)">
+        <span>Записаться на консультацию</span>
+        <span style="width:4.5cqw;height:4.5cqw;min-width:40px;min-height:40px;border-radius:50%;background:#8c4425;display:grid;place-items:center">
+          <span style="width:52%;height:52%;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:62.3cqw;bottom:0;z-index:5;background:linear-gradient(90deg,#191918 0%,#1b1b1a 72%,#22191a 100%);color:#fff;display:grid;grid-template-columns:22cqw 28.5cqw 22.5cqw auto;align-items:center;padding-left:3.66cqw">
+    <div style="display:flex;align-items:center;gap:1.1cqw">
+        <span style="flex:none;width:3.5cqw;height:3.5cqw;background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sofa.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sofa.svg) center/contain no-repeat"></span>
+        <span style="display:flex;flex-direction:column;gap:.3cqw"><span style="font-size:1.6cqw;font-weight:400;color:#fff;white-space:nowrap">Без оценки</span><span style="font-size:1.25cqw;color:#8a8986;font-weight:300;white-space:nowrap">Ты можешь быть собой</span></span>
+      </div>
+    <div style="display:flex;align-items:center;gap:1.1cqw">
+        <span style="flex:none;width:3.5cqw;height:3.5cqw;background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/target.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/target.svg) center/contain no-repeat"></span>
+        <span style="display:flex;flex-direction:column;gap:.3cqw"><span style="font-size:1.6cqw;font-weight:400;color:#fff;white-space:nowrap">Фокус на реальной жизни</span><span style="font-size:1.25cqw;color:#8a8986;font-weight:300;white-space:nowrap">Работаем с тем, что тебе важно</span></span>
+      </div>
+    <div style="display:flex;align-items:center;gap:1.1cqw">
+        <span style="flex:none;width:3.5cqw;height:3.5cqw;background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sprout.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sprout.svg) center/contain no-repeat"></span>
+        <span style="display:flex;flex-direction:column;gap:.3cqw"><span style="font-size:1.6cqw;font-weight:400;color:#fff;white-space:nowrap">В твоем темпе</span><span style="font-size:1.25cqw;color:#8a8986;font-weight:300;white-space:nowrap">Без спешки и дедлайнов</span></span>
+      </div>
+    <div style="display:flex;align-items:center;gap:1.1cqw">
+        <span style="flex:none;width:3.5cqw;height:3.5cqw;background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/lock.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/lock.svg) center/contain no-repeat"></span>
+        <span style="display:flex;flex-direction:column;gap:.3cqw"><span style="font-size:1.6cqw;font-weight:400;color:#fff;white-space:nowrap">Конфеденциально</span><span style="font-size:1.25cqw;color:#8a8986;font-weight:300;white-space:nowrap">Все остается между нами</span></span>
+      </div>
+  </div>
+</section>
+</sc-if>
+<sc-if value="{{ isTabV }}" hint-placeholder-val="{{ false }}">
+<!-- HERO · TABLET PORTRAIT + MINI TABLET (600–1024px) · reference 1024×1519, units in cqw -->
+<section id="top" data-screen-label="Hero · Tablet portrait" style="position:relative;height:148.3cqw;overflow:hidden;background:linear-gradient(90deg,#e2dfd6 0%,#e8e5dd 40%,#ebe8e1 100%)">
+  <div ref="{{ heroParRef }}" style="position:absolute;left:-25.57cqw;top:-26.65cqw;width:157.33cqw;height:157.28cqw;will-change:transform">
+    <div data-hero-img="" style="position:absolute;inset:0"><div aria-hidden="true" style="position:absolute;left:18%;top:20%;width:64%;height:56%;border-radius:50%;background:radial-gradient(closest-side,rgba(58,50,42,.34) 0%,rgba(58,50,42,.22) 45%,rgba(58,50,42,.08) 75%,rgba(58,50,42,0) 100%);pointer-events:none"></div>
+        <img src="assets/hero-cutout.png" alt="Екатерина Глебова" draggable="false" style="position:relative;display:block;width:100%;height:100%;object-fit:contain;background:none"></div>
+  </div>
+  <div style="position:absolute;left:5.1cqw;right:5.8cqw;top:2.9cqw;height:5.3cqw;z-index:6;display:flex;align-items:center;justify-content:space-between;gap:2cqw">
+    <a href="#top" style="color:#2e2e2e;font-size:2.65cqw;font-weight:600;letter-spacing:.05em;line-height:1;white-space:nowrap">ЕКАТЕРИНА ГЛЕБОВА</a>
+    <div style="display:flex;align-items:center;gap:2.4cqw">
+      <span style="font-size:2.65cqw;font-weight:300;letter-spacing:.09em;color:#555;line-height:1">ПСИХОЛОГ</span>
+      <button onClick="{{ openMenu }}" aria-label="Открыть меню" style="flex:none;width:5.3cqw;height:5.3cqw;min-width:44px;min-height:44px;border-radius:50%;border:none;background:#111;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:max(3px,.12em);padding:0;font-size:5.3cqw;transition:transform .4s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(1.06)" style-active="transform:scale(.94)">
+        <span style="display:block;width:46%;height:max(2px,.075em);border-radius:2px;background:#fff"></span>
+        <span style="display:block;width:46%;height:max(2px,.075em);border-radius:2px;background:#fff"></span>
+      </button>
+    </div>
+  </div>
+  <div style="position:absolute;left:0;top:91.8cqw;width:110cqw;height:80cqw;z-index:4;background:#000;border-top-left-radius:6cqw;transform-origin:0 0;transform:rotate(2.56deg)"></div>
+  <div style="position:absolute;inset:0;z-index:5;pointer-events:none;color:#fff">
+    <h1 style="position:absolute;left:5.2cqw;top:98.4cqw;margin:0;font-weight:500;font-size:4.65cqw;line-height:1.02;color:#fff;white-space:nowrap">
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-line="" style="display:block">Помогаю женщинам</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-line="" style="display:block">вернуть <span style="color:#a3502c">контакт с собой</span>,</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-line="" style="display:block">свои желания и вырастить</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-line="" style="display:block;color:#a3502c">внутреннюю опору</span></span>
+    </h1>
+    <p data-hero-fade="" style="position:absolute;left:5.2cqw;top:121cqw;width:40cqw;margin:0;font-size:max(13px,1.85cqw);line-height:1.28;color:#e6e4df;font-weight:400">Если ты чувствуешь усталость от жизни, хочешь изменений, но не знаешь с чего начать, не обязательно справляться в одиночку</p>
+    <div data-hero-fade="" style="position:absolute;left:5.2cqw;top:132.3cqw;width:54.3cqw;pointer-events:auto">
+      <button onClick="{{ openModal }}" style="width:100%;height:9.6cqw;min-height:52px;border:none;border-radius:999px;background:#8c4425;color:#fff;font-size:max(16px,2.75cqw);font-weight:500;cursor:pointer;white-space:nowrap;transition:background .4s,transform .4s cubic-bezier(.16,1,.3,1)" style-hover="background:#9a4b29" style-active="transform:scale(.98)">Записаться на консультацию</button>
+    </div>
+    <div data-hero-fade="" style="position:absolute;left:71.8cqw;top:107.6cqw;display:flex;flex-direction:column;gap:4.5cqw">
+      <div style="display:flex;align-items:center;gap:1.2cqw">
+        <span style="flex:none;width:3.5cqw;height:3.5cqw;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sofa.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sofa.svg) center/contain no-repeat"></span>
+        <span style="display:flex;flex-direction:column;gap:.25cqw"><span style="font-size:max(12px,1.6cqw);font-weight:400;color:#fff;white-space:nowrap">Без оценки</span><span style="font-size:max(10px,1.25cqw);color:#8f8d89;font-weight:300;white-space:nowrap">Ты можешь быть собой</span></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:1.2cqw">
+        <span style="flex:none;width:3.5cqw;height:3.5cqw;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/target.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/target.svg) center/contain no-repeat"></span>
+        <span style="display:flex;flex-direction:column;gap:.25cqw"><span style="font-size:max(12px,1.6cqw);font-weight:400;color:#fff;white-space:nowrap">Фокус на реальности</span><span style="font-size:max(10px,1.25cqw);color:#8f8d89;font-weight:300;white-space:nowrap">Работаем с тем, что тебе важно</span></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:1.2cqw">
+        <span style="flex:none;width:3.5cqw;height:3.5cqw;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/lock.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/lock.svg) center/contain no-repeat"></span>
+        <span style="display:flex;flex-direction:column;gap:.25cqw"><span style="font-size:max(12px,1.6cqw);font-weight:400;color:#fff;white-space:nowrap">Конфеденциально</span><span style="font-size:max(10px,1.25cqw);color:#8f8d89;font-weight:300;white-space:nowrap">Все остается между нами</span></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:1.2cqw">
+        <span style="flex:none;width:3.5cqw;height:3.5cqw;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sprout.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sprout.svg) center/contain no-repeat"></span>
+        <span style="display:flex;flex-direction:column;gap:.25cqw"><span style="font-size:max(12px,1.6cqw);font-weight:400;color:#fff;white-space:nowrap">В твоем темпе</span><span style="font-size:max(10px,1.25cqw);color:#8f8d89;font-weight:300;white-space:nowrap">Без спешки и дедлайнов</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+</sc-if>
+<sc-if value="{{ isPhone }}" hint-placeholder-val="{{ false }}">
+<!-- HERO · PHONE (<600px) · reference 454×1104, units in cqw -->
+<section id="top" data-screen-label="Hero · Phone" style="position:relative;height:243.2cqw;overflow:hidden;background:linear-gradient(90deg,#e2dfd6 0%,#e8e5dd 40%,#ebe8e1 100%)">
+  <div ref="{{ heroParRef }}" style="position:absolute;left:-69.1cqw;top:-45.26cqw;width:231.46cqw;height:231.79cqw;will-change:transform">
+    <div data-hero-img="" style="position:absolute;inset:0"><div aria-hidden="true" style="position:absolute;left:18%;top:20%;width:64%;height:56%;border-radius:50%;background:radial-gradient(closest-side,rgba(58,50,42,.34) 0%,rgba(58,50,42,.22) 45%,rgba(58,50,42,.08) 75%,rgba(58,50,42,0) 100%);pointer-events:none"></div>
+        <img src="assets/hero-cutout.png" alt="Екатерина Глебова" draggable="false" style="position:relative;display:block;width:100%;height:100%;object-fit:contain;background:none"></div>
+  </div>
+  <div style="position:absolute;left:8.4cqw;right:3.1cqw;top:4.4cqw;height:8.8cqw;z-index:6;display:flex;align-items:center;justify-content:space-between;gap:3cqw">
+    <a href="#top" style="display:flex;align-items:baseline;gap:4.6cqw;font-size:3.57cqw;line-height:1;white-space:nowrap">
+      <span style="color:#2e2e2e;font-weight:600;letter-spacing:.05em">ЕКАТЕРИНА ГЛЕБОВА</span><span style="font-weight:300;letter-spacing:.09em;color:#555">ПСИХОЛОГ</span>
+    </a>
+    <button onClick="{{ openMenu }}" aria-label="Открыть меню" style="flex:none;width:8.8cqw;height:8.8cqw;min-width:44px;min-height:44px;border-radius:50%;border:none;background:#111;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:max(3px,.12em);padding:0;font-size:8.8cqw;transition:transform .4s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(1.06)" style-active="transform:scale(.94)">
+        <span style="display:block;width:46%;height:max(2px,.075em);border-radius:2px;background:#fff"></span>
+        <span style="display:block;width:46%;height:max(2px,.075em);border-radius:2px;background:#fff"></span>
+      </button>
+  </div>
+  <div style="position:absolute;left:0;top:138cqw;width:110cqw;height:120cqw;z-index:4;background:#000;border-top-left-radius:8.8cqw;transform-origin:0 0;transform:rotate(2.37deg)"></div>
+  <div style="position:absolute;inset:0;z-index:5;pointer-events:none;color:#fff">
+    <h1 style="position:absolute;left:8.6cqw;top:147.6cqw;margin:0;font-weight:500;font-size:6.3cqw;line-height:1.02;color:#fff;white-space:nowrap">
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-line="" style="display:block">Помогаю женщинам</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-line="" style="display:block">вернуть <span style="color:#a3502c">контакт с собой</span>,</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-line="" style="display:block">свои желания и вырастить</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.08em"><span data-line="" style="display:block;color:#a3502c">внутреннюю опору</span></span>
+    </h1>
+    <p data-hero-fade="" style="position:absolute;left:8.6cqw;top:176.4cqw;width:66cqw;margin:0;font-size:max(13px,3.15cqw);line-height:1.38;color:#e6e4df;font-weight:400">Если ты чувствуешь усталость от жизни, хочешь изменений, но не знаешь с чего начать, не обязательно справляться в одиночку</p>
+    <div data-hero-fade="" style="position:absolute;left:8.6cqw;right:8.6cqw;top:195.4cqw;pointer-events:auto">
+      <button onClick="{{ openModal }}" style="width:100%;height:15cqw;min-height:52px;border:none;border-radius:999px;background:#8c4425;color:#fff;font-size:max(15px,3.8cqw);font-weight:500;cursor:pointer;white-space:nowrap;transition:background .4s,transform .4s cubic-bezier(.16,1,.3,1)" style-hover="background:#9a4b29" style-active="transform:scale(.98)">Записаться на консультацию</button>
+    </div>
+    <div data-hero-fade="" style="position:absolute;left:8.6cqw;right:4cqw;top:216.4cqw;display:grid;grid-template-columns:43.8cqw minmax(0,1fr);column-gap:2cqw;row-gap:5.3cqw">
+      <div style="display:flex;align-items:center;gap:2.4cqw">
+        <span style="flex:none;width:7cqw;height:7cqw;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sofa.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sofa.svg) center/contain no-repeat"></span>
+        <span style="display:flex;flex-direction:column;gap:.5cqw"><span style="font-size:max(12px,3.1cqw);font-weight:400;color:#fff;white-space:nowrap">Без оценки</span><span style="font-size:max(10px,2.4cqw);color:#8f8d89;font-weight:300;line-height:1.25">Ты можешь быть собой</span></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:2.4cqw">
+        <span style="flex:none;width:7cqw;height:7cqw;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/target.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/target.svg) center/contain no-repeat"></span>
+        <span style="display:flex;flex-direction:column;gap:.5cqw"><span style="font-size:max(12px,3.1cqw);font-weight:400;color:#fff;white-space:nowrap">Фокус на реальности</span><span style="font-size:max(10px,2.4cqw);color:#8f8d89;font-weight:300;line-height:1.25">Работаем с тем, что тебе важно</span></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:2.4cqw">
+        <span style="flex:none;width:7cqw;height:7cqw;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sprout.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sprout.svg) center/contain no-repeat"></span>
+        <span style="display:flex;flex-direction:column;gap:.5cqw"><span style="font-size:max(12px,3.1cqw);font-weight:400;color:#fff;white-space:nowrap">В твоем темпе</span><span style="font-size:max(10px,2.4cqw);color:#8f8d89;font-weight:300;line-height:1.25">Без спешки и дедлайнов</span></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:2.4cqw">
+        <span style="flex:none;width:7cqw;height:7cqw;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/lock.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/lock.svg) center/contain no-repeat"></span>
+        <span style="display:flex;flex-direction:column;gap:.5cqw"><span style="font-size:max(12px,3.1cqw);font-weight:400;color:#fff;white-space:nowrap">Конфеденциально</span><span style="font-size:max(10px,2.4cqw);color:#8f8d89;font-weight:300;line-height:1.25">Все остается между нами</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+</sc-if>
+<!-- PAIN -->
+<section id="pain" style="position:relative;isolation:isolate;overflow:clip;padding:clamp(96px,12cqw,160px) 0 clamp(80px,10cqw,140px)">
+  
+  
+  <div data-blob="2" style="position:absolute;left:30%;top:-8%;width:34cqw;height:34cqw;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.75),transparent 68%);filter:blur(30px);pointer-events:none;z-index:-1"></div>
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,5cqw,72px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:clamp(48px,6cqw,80px)">
+      <h2 data-reveal="up" style="margin:0;font-weight:600;font-size:clamp(32px,3.6cqw,54px);line-height:1.12;letter-spacing:-0.02em;max-width:820px;text-wrap:balance">Возможно, вы сталкиваетесь с похожими <span style="color:#a3502c">чувствами, переживаниями</span> и мыслями:</h2>
+      <p data-reveal="up" data-delay="150" style="margin:0;font-size:16px;color:#4a4743;max-width:260px;line-height:1.5;display:{{ rs.hoverHint }}">Наведите на карточку, чтобы задержаться на ней чуть дольше</p>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ rs.painCols }};gap:{{ rs.cardGap }}">
+      <div data-reveal="up" data-delay="0"><div data-spot="" style="height:100%;padding:{{ rs.cardPad }};border-radius:24px;background:radial-gradient(420px circle at var(--mx,-200px) var(--my,-200px),rgba(163,80,44,.13),transparent 60%),linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85);transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s;display:flex;flex-direction:column;gap:18px" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(50,45,35,.09)">
+        
+        <h3 style="margin:0;font-size:22px;font-weight:600;line-height:1.3">«Я тревожусь и не могу успокоиться»</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#4a4743">Нет чувства радости, частое беспокойство, напряжение, выгорание, раздражительность, потеря интереса к жизни</p>
+      </div></div>
+      <div data-reveal="up" data-delay="100"><div data-spot="" style="height:100%;padding:{{ rs.cardPad }};border-radius:24px;background:radial-gradient(420px circle at var(--mx,-200px) var(--my,-200px),rgba(163,80,44,.13),transparent 60%),linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85);transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s;display:flex;flex-direction:column;gap:18px" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(50,45,35,.09)">
+        
+        <h3 style="margin:0;font-size:22px;font-weight:600;line-height:1.3">«Я постоянно себя критикую»</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#4a4743">Сравнение себя с другими, ощущение «недостаточности», «неправильности», сложно быть наедине с собой, недовольство внешностью и собой в целом</p>
+      </div></div>
+      <div data-reveal="up" data-delay="200"><div data-spot="" style="height:100%;padding:{{ rs.cardPad }};border-radius:24px;background:radial-gradient(420px circle at var(--mx,-200px) var(--my,-200px),rgba(163,80,44,.13),transparent 60%),linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85);transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s;display:flex;flex-direction:column;gap:18px" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(50,45,35,.09)">
+        
+        <h3 style="margin:0;font-size:22px;font-weight:600;line-height:1.3">«У меня проблемы в отношениях»</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#4a4743">Не могу сказать «нет», выбираю неудачных партнеров, затрудняюсь говорить о своих чувствах, мне сложно доверять другим и быть собой</p>
+      </div></div>
+      <div data-reveal="up" data-delay="0"><div data-spot="" style="height:100%;padding:{{ rs.cardPad }};border-radius:24px;background:radial-gradient(420px circle at var(--mx,-200px) var(--my,-200px),rgba(163,80,44,.13),transparent 60%),linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85);transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s;display:flex;flex-direction:column;gap:18px" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(50,45,35,.09)">
+        
+        <h3 style="margin:0;font-size:22px;font-weight:600;line-height:1.3">«Я все понимаю, но легче не становится»</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#4a4743">Нет сил и мотивации, усталость, чувство пустоты, потеря контакта с собой, ничего не меняется от понимания проблем</p>
+      </div></div>
+      <div data-reveal="up" data-delay="100"><div data-spot="" style="height:100%;padding:{{ rs.cardPad }};border-radius:24px;background:radial-gradient(420px circle at var(--mx,-200px) var(--my,-200px),rgba(163,80,44,.13),transparent 60%),linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85);transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s;display:flex;flex-direction:column;gap:18px" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(50,45,35,.09)">
+        
+        <h3 style="margin:0;font-size:22px;font-weight:600;line-height:1.3">«Я не понимаю, чего хочу»</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#4a4743">Мне важно перестать жить «как надо» и понять, как хочется именно мне, выйти из тупика, научиться принимать решения</p>
+      </div></div>
+      <div data-reveal="up" data-delay="200"><div data-spot="" style="height:100%;padding:{{ rs.cardPad }};border-radius:24px;background:radial-gradient(420px circle at var(--mx,-200px) var(--my,-200px),rgba(163,80,44,.13),transparent 60%),linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85);transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s;display:flex;flex-direction:column;gap:18px" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(50,45,35,.09)">
+        
+        <h3 style="margin:0;font-size:22px;font-weight:600;line-height:1.3">«Я потеряла опору и не знаю, куда двигаться»</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#4a4743">Страх совершить ошибку, страх будущего, состояние неопределенности, нехватки опоры и поддержки</p>
+      </div></div>
+    </div>
+    <div data-reveal="scale" style="margin-top:20px">
+      <div style="position:relative;overflow:hidden;border-radius:28px;background:#1b1b1a;color:#fff;padding:clamp(36px,5cqw,64px);display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
+        <div ref="{{ ringRef }}" style="position:absolute;right:-120px;top:-160px;width:460px;height:460px;border-radius:50%;border:1px solid rgba(255,255,255,.08);pointer-events:none"></div>
+        <div style="position:absolute;right:-40px;top:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(163,80,44,.45),transparent 70%);pointer-events:none"></div>
+        <h3 style="position:relative;margin:0;font-weight:500;font-size:clamp(24px,2.4cqw,34px);line-height:1.3;max-width:640px">Если вы узнали себя хотя бы в одном пункте, я могу вам помочь с этим в <span style="color:#e09a76">личной терапии</span></h3>
+        <button onClick="{{ openModal }}" data-magnetic="" style="position:relative;display:flex;align-items:center;gap:18px;padding:8px 8px 8px 28px;border:none;border-radius:999px;background:#fff;color:#1b1b1a;font-size:16px;font-weight:600;cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1)">
+          <span>Записаться на консультацию</span>
+          <span style="width:52px;height:52px;border-radius:50%;background:#a3502c;display:grid;place-items:center"><span style="width:24px;height:24px;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat"></span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="position:relative;isolation:isolate;overflow:clip;padding:clamp(80px,10cqw,140px) 0">
+  
+  <div data-blob="0" style="position: absolute; top: 248px; width: 40cqw; height: 40cqw; border-radius: 50%; background: radial-gradient(circle,rgba(255,255,255,.75),transparent 68%); filter: blur(30px); pointer-events: none; z-index: -1; left: 1186px"></div>
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(48px,7cqw,110px);align-items:start">
+    <div>
+      <div data-reveal="up" style="display:flex;align-items:center;gap:14px;margin-bottom:28px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#a3502c;font-weight:600"><span style="width:36px;height:1px;background:#a3502c"></span>Обо мне</div>
+      <h2 data-reveal="up" style="margin:0 0 36px;font-weight:600;font-size:clamp(32px,3.6cqw,54px);line-height:1.12;letter-spacing:-0.02em">Я Екатерина Глебова, <span style="color:#a3502c">клинический психолог</span></h2>
+      <div data-reveal="up" data-delay="100" style="display:flex;flex-direction:column;gap:18px;font-size:17px;line-height:1.7;color:#3f3c38;max-width:600px">
+        <p style="margin:0">Я всегда мечтала помогать людям, раскрывать их внутренний потенциал, поддерживать в периоды кризисов. Мне важна не столько проблема, сколько сам человек со своей уникальной историей, а также то, как именно вы пришли к точке, где одному справляться уже трудно.</p>
+        <p style="margin:0">Я умею работать бережно, но при этом глубоко. В терапии со мной клиенты учатся лучше замечать себя и свои чувства, потребности, ощущения. В их историях становится больше жизни и бережного отношения к себе, к своим эмоциям и желаниям. Моя сильная сторона — работа с эмоциями, а также умение видеть ресурс даже в непростых ситуациях.</p>
+      </div>
+      <h3 data-reveal="up" style="margin:64px 0 24px;font-size:26px;font-weight:600">Мой подход</h3>
+      <div style="display:grid;grid-template-columns:{{ rs.approachCols }};gap:{{ rs.approachGap }}">
+        <div data-reveal="up" data-delay="0"><div data-spot="" style="height:100%;padding:26px;border-radius:22px;background:radial-gradient(320px circle at var(--mx,-200px) var(--my,-200px),rgba(163,80,44,.13),transparent 60%),linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85);display:flex;flex-direction:column;gap:12px;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-5px);box-shadow:0 20px 44px rgba(50,45,35,.09)">
+          
+          
+          <span style="font-size:19px;font-weight:600">Бережность</span><span style="font-size:15px;line-height:1.6;color:#4a4743">Отношусь к вашим переживаниям и чувствам внимательно, на встречах вам можно быть собой настоящим</span>
+        </div></div>
+        <div data-reveal="up" data-delay="100"><div data-spot="" style="height:100%;padding:26px;border-radius:22px;background:radial-gradient(320px circle at var(--mx,-200px) var(--my,-200px),rgba(163,80,44,.13),transparent 60%),linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85);display:flex;flex-direction:column;gap:12px;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-5px);box-shadow:0 20px 44px rgba(50,45,35,.09)">
+          
+          <span style="font-size:19px;font-weight:600">Без оценки</span>
+          <span style="font-size:15px;line-height:1.6;color:#4a4743">Создаю безопасное пространство, где можно говорить о самом важном без тревоги и неловкости</span>
+        </div></div>
+        <div data-reveal="up" data-delay="0"><div data-spot="" style="height:100%;padding:26px;border-radius:22px;background:radial-gradient(320px circle at var(--mx,-200px) var(--my,-200px),rgba(163,80,44,.13),transparent 60%),linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85);display:flex;flex-direction:column;gap:12px;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-5px);box-shadow:0 20px 44px rgba(50,45,35,.09)">
+          
+          <span style="font-size:19px;font-weight:600">В вашем темпе</span>
+          <span style="font-size:15px;line-height:1.6;color:#4a4743">Учитываю ваш индивидуальный ритм, не заставляю говорить о том, о чем вам пока не хочется</span>
+        </div></div>
+        <div data-reveal="up" data-delay="100"><div data-spot="" style="height:100%;padding:26px;border-radius:22px;background:radial-gradient(320px circle at var(--mx,-200px) var(--my,-200px),rgba(163,80,44,.13),transparent 60%),linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85);display:flex;flex-direction:column;gap:12px;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-5px);box-shadow:0 20px 44px rgba(50,45,35,.09)">
+          
+          <span style="font-size:19px;font-weight:600">Фокус на изменениях</span>
+          <span style="font-size:15px;line-height:1.6;color:#4a4743">На каждой консультации мы последовательно работаем над разрешением вашего запроса</span>
+        </div></div>
+      </div>
+    </div>
+    <div style="position:{{ rs.stickyPos }};top:110px;order:{{ rs.photoOrder }}">
+      <div data-reveal="clip" style="position:relative;border-radius:{{ rs.photoRadius }};overflow:hidden;aspect-ratio:{{ rs.aboutAR }};max-height:{{ rs.aboutMaxH }};background:#dcd9d2">
+        <div data-par="" style="position:absolute;left:0;right:0;top:-8%;bottom:-8%;will-change:transform">
+          <image-slot id="about-photo" shape="rect" mask="inset(0)" src="{{ aboutSrc }}" placeholder="Фото для блока «Обо мне»"></image-slot>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUESTS -->
+<section id="requests" style="background:#1b1b1a;color:#f2efe9;border-radius:{{ rs.secRadius }};position:relative">
+  <div style="position:relative;overflow:clip;isolation:isolate;padding:clamp(80px,10cqw,140px) 0;display:flex;flex-direction:column;gap:clamp(36px,4.5cqw,64px)">
+    <div data-blob="1" style="position: absolute; left: -270px; top: 53px; width: 44cqw; height: 44cqw; border-radius: 50%; background: radial-gradient(circle,rgba(255,255,255,.07),transparent 68%); filter: blur(30px); pointer-events: none; z-index: -1"></div>
+    <div style="max-width:1320px;width:100%;margin:0 auto;padding:0 clamp(20px,5cqw,72px)">
+      <h2 data-reveal="up" style="margin: 0; font-weight: 600; font-size: clamp(32px,3.6cqw,54px); line-height: 1.12; letter-spacing: -0.02em; max-width: 640px; width: {{ rs.reqW }}">С какими запросами <span style="color: #e09a76; width: {{ rs.reqW }}; display: inline-block">я могу помочь</span></h2>
+    </div>
+    <div style="max-width:1320px;width:100%;margin:0 auto;padding:0 clamp(20px,5cqw,72px);display:grid;grid-template-columns:{{ rs.reqCols }};gap:{{ rs.cardGap }}">
+      <div data-reveal="up" data-delay="0">
+        <div style="height:100%;border-radius:28px;background:#a3502c;color:#fff;padding:{{ rs.cardPad }};display:flex;flex-direction:column;gap:18px;border:1px solid transparent;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.3)">
+          <span style="width:64px;height:64px;border-radius:20px;background:rgba(255,255,255,.16);display:grid;place-items:center"><span style="width:30px;height:30px;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/battery-low.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/battery-low.svg) center/contain no-repeat"></span></span>
+          <span style="font-size:24px;font-weight:600;line-height:1.25">Неудовлетворенность жизнью</span>
+          <span style="font-size:16px;line-height:1.6;color:#f6e3da">Выгорание, сниженное настроение, тревога, напряженность, отсутствие сил и мотивации, потеря интереса и радости, трудности с выражением эмоций</span>
+        </div>
+      </div>
+      <div data-reveal="up" data-delay="100">
+        <div style="height:100%;border-radius:28px;background:linear-gradient(160deg,#fdfdfc 0%,#f8f7f4 100%);color:#2a2a28;padding:{{ rs.cardPad }};display:flex;flex-direction:column;gap:18px;border:1px solid transparent;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.3)">
+          <span style="width:64px;height:64px;border-radius:20px;background:rgba(163,80,44,.12);display:grid;place-items:center"><span style="width:30px;height:30px;background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/circle-help.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/circle-help.svg) center/contain no-repeat"></span></span>
+          <span style="font-size:24px;font-weight:600;line-height:1.25">Непонимание себя</span>
+          <span style="font-size:16px;line-height:1.6;color:#4a4743">Сложно понять, чего хочется, в каком направлении развиваться, трудно ответить на вопрос о том «какой(ая) я и что мне на самом деле важно»</span>
+        </div>
+      </div>
+      <div data-reveal="up" data-delay="200">
+        <div style="height:100%;border-radius:28px;background:#e09a76;color:#2a1a12;padding:{{ rs.cardPad }};display:flex;flex-direction:column;gap:18px;border:1px solid transparent;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.3)">
+          <span style="width:64px;height:64px;border-radius:20px;background:rgba(255,255,255,.32);display:grid;place-items:center"><span style="width:30px;height:30px;background:#6b2f1c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/user-round.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/user-round.svg) center/contain no-repeat"></span></span>
+          <span style="font-size:24px;font-weight:600;line-height:1.25">Непринятие себя</span>
+          <span style="font-size:16px;line-height:1.6;color:#4a2e20">Критика и недовольство собой, своим телом, ощущение собственной «недостаточности», низкая самооценка, сравнение себя с другими, сложности с доверием себе</span>
+        </div>
+      </div>
+      <div data-reveal="up" data-delay="0">
+        <div style="height:100%;border-radius:28px;background:#6b2f1c;color:#fff;padding:{{ rs.cardPad }};display:flex;flex-direction:column;gap:18px;border:1px solid transparent;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.3)">
+          <span style="width:64px;height:64px;border-radius:20px;background:rgba(255,255,255,.14);display:grid;place-items:center"><span style="width:30px;height:30px;background:#f3c3a8;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/heart-crack.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/heart-crack.svg) center/contain no-repeat"></span></span>
+          <span style="font-size:24px;font-weight:600;line-height:1.25">Трудности в отношениях</span>
+          <span style="font-size:16px;line-height:1.6;color:#f3d6c6">Недопонимание, ревность, выбор неудачных партнеров, потеря себя в отношениях</span>
+        </div>
+      </div>
+      <div data-reveal="up" data-delay="100">
+        <div style="height:100%;border-radius:28px;background:#f1dccf;color:#2a2a28;padding:{{ rs.cardPad }};display:flex;flex-direction:column;gap:18px;border:1px solid transparent;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.3)">
+          <span style="width:64px;height:64px;border-radius:20px;background:rgba(163,80,44,.14);display:grid;place-items:center"><span style="width:30px;height:30px;background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/house.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/house.svg) center/contain no-repeat"></span></span>
+          <span style="font-size:24px;font-weight:600;line-height:1.25">Конфликты с родителями</span>
+          <span style="font-size:16px;line-height:1.6;color:#5a4a40">Недопонимание, обида, трудности в общении, невозможность «отсоединиться» от родителей</span>
+        </div>
+      </div>
+      <div data-reveal="up" data-delay="200">
+        <div style="height:100%;border-radius:28px;background:#262624;color:#f2efe9;padding:{{ rs.cardPad }};display:flex;flex-direction:column;gap:18px;border:1px solid rgba(255,255,255,.06);transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.3)">
+          <span style="width:64px;height:64px;border-radius:20px;background:rgba(224,154,118,.14);display:grid;place-items:center"><span style="width:30px;height:30px;background:#e09a76;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/shuffle.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/shuffle.svg) center/contain no-repeat"></span></span>
+          <span style="font-size:24px;font-weight:600;line-height:1.25">Переживание перемен и неопределенности</span>
+          <span style="font-size:16px;line-height:1.6;color:#a19e97">Ощущение потери опоры и ориентиров, трудности адаптации в новом месте, сложности с принятием решений</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" style="background:#1b1b1a;padding:0 0 clamp(20px,3cqw,40px)">
+  <div style="position:relative;isolation:isolate;overflow:clip;background:#ebe8e1;border-radius:{{ rs.secRadius }};padding:clamp(96px,12cqw,160px) 0">
+    
+    
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(48px,6cqw,96px);align-items:start">
+      <div style="position:{{ rs.stickyPos }};top:110px">
+        <div data-reveal="clip" style="position:relative;border-radius:{{ rs.photoRadius }};overflow:hidden;aspect-ratio:{{ rs.procAR }};max-height:{{ rs.procMaxH }};background:#dcd9d2">
+          <image-slot id="process-photo" shape="rect" mask="inset(0)" src="assets/chair.jpg" placeholder="Фото для блока «Как мы работаем»"></image-slot>
+        </div>
+      </div>
+      <div>
+        
+        <h2 data-reveal="up" style="margin: 0 0 56px; font-weight: 600; font-size: clamp(32px,3.6cqw,54px); line-height: 1.12; letter-spacing: -0.02em; width: {{ rs.procW }}">Как мы работаем <span style="color:#a3502c">в терапии</span></h2>
+        <div ref="{{ stepsRef }}" style="position:relative;padding-left:{{ rs.stepsPad }};max-width:{{ rs.stepsMaxW }}">
+          <div ref="{{ trackRef }}" style="position:absolute;left:11px;top:0;height:0;width:2px;margin-left:-1px;background:rgba(42,42,40,.14);border-radius:2px"></div>
+          <div ref="{{ stepsLineRef }}" style="position:absolute;left:11px;top:0;height:0;width:2px;margin-left:-1px;background:#a3502c;border-radius:2px;transform-origin:50% 0;transform:scaleY(0)"></div>
+          <div data-step="" style="position:relative;padding:0 0 20px;transition:opacity .6s">
+            <span data-stepdot="" style="position:absolute;left:{{ rs.dotL }};top:{{ rs.dotT }};width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:#ebe8e1;border:2px solid #a3502c;transition:background .4s,box-shadow .5s"></span>
+            <div style="padding:{{ rs.stepPad }};border-radius:24px;background:linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85)"><div style="display:flex;align-items:center;gap:{{ rs.stepGap }};min-height:48px;margin-bottom:14px"><span style="font-size:{{ rs.stepNum }};line-height:1;color:#a3502c;font-weight:300">1</span><span style="font-size:{{ rs.stepTitle }};font-weight:600;line-height:1.3">Знакомство и диагностика ситуации</span></div>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#4a4743;max-width:560px">Вы в свободной форме рассказываете, что привело вас на консультацию, какие способы решения проблемы вы уже пробовали. Мы оцениваем ваше актуальное состояние, а также описываем результат, к которому хочется прийти.</p></div>
+          </div>
+          <div data-step="" style="position:relative;padding:0 0 20px;transition:opacity .6s">
+            <span data-stepdot="" style="position:absolute;left:{{ rs.dotL }};top:{{ rs.dotT }};width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:#ebe8e1;border:2px solid #a3502c;transition:background .4s,box-shadow .5s"></span>
+            <div style="padding:{{ rs.stepPad }};border-radius:24px;background:linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85)"><div style="display:flex;align-items:center;gap:{{ rs.stepGap }};min-height:48px;margin-bottom:14px"><span style="font-size:{{ rs.stepNum }};line-height:1;color:#a3502c;font-weight:300">2</span><span style="font-size:{{ rs.stepTitle }};font-weight:600;line-height:1.3">Определяем фокус и приоритеты</span></div>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#4a4743;max-width:560px">Мы вместе формулируем запросы, мишени работы и начинаем процесс терапии. Это выглядит так: на каждой встрече мы беседуем по той теме, которая актуальна вам в рамках запроса. Я работаю гибко без строгих протоколов, но направляю вас и структурирую процесс. Бывает так, что запрос постепенно меняется, это нормально, мы продолжаем работу как единый процесс.</p></div>
+          </div>
+          <div data-step="" style="position:relative;padding:0 0 20px;transition:opacity .6s">
+            <span data-stepdot="" style="position:absolute;left:{{ rs.dotL }};top:{{ rs.dotT }};width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:#ebe8e1;border:2px solid #a3502c;transition:background .4s,box-shadow .5s"></span>
+            <div style="padding:{{ rs.stepPad }};border-radius:24px;background:linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85)"><div style="display:flex;align-items:center;gap:{{ rs.stepGap }};min-height:48px;margin-bottom:14px"><span style="font-size:{{ rs.stepNum }};line-height:1;color:#a3502c;font-weight:300">3</span><span style="font-size:{{ rs.stepTitle }};font-weight:600;line-height:1.3">Процесс терапии</span></div>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#4a4743;max-width:560px">Я наблюдаю за вашим состоянием, мы можем обсуждать любые проблемы и чувства, возникшие в процессе нашей работы. На консультации я могу предложить техники и упражнения, чтобы получить опыт, который мы потом подробно обсуждаем.</p></div>
+          </div>
+          <div data-step="" style="position:relative;padding:0;transition:opacity .6s">
+            <span data-stepdot="" style="position:absolute;left:{{ rs.dotL }};top:{{ rs.dotT }};width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:#ebe8e1;border:2px solid #a3502c;transition:background .4s,box-shadow .5s"></span>
+            <div style="padding:{{ rs.stepPad }};border-radius:24px;background:linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85)"><div style="display:flex;align-items:center;gap:{{ rs.stepGap }};min-height:48px;margin-bottom:14px"><span style="font-size:{{ rs.stepNum }};line-height:1;color:#a3502c;font-weight:300">4</span><span style="font-size:{{ rs.stepTitle }};font-weight:600;line-height:1.3">Поддержка изменений</span></div>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#4a4743;max-width:560px">Одного часа в кабинете редко бывает достаточно для устойчивых изменений, поэтому я предлагаю мини-задания, которые вы можете выполнять за рамками кабинета, постепенно внедряя изменения в свой привычный жизненный уклад.</p></div>
+          </div>
+        </div>
+        <div data-reveal="up" style="margin-top:28px;margin-left:{{ rs.bordoML }};max-width:{{ rs.bordoMaxW }}">
+          <div style="position:relative;overflow:hidden;border-radius:28px;background:#6e2430;color:#fff;padding:clamp(28px,3.4cqw,40px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+            <div style="position: absolute; right: -80px; top: -120px; width: 300px; height: 300px; border-radius: 60%; background: radial-gradient(circle,rgba(255,255,255,.22),transparent 70%); pointer-events: none"></div>
+            <span style="position:relative;font-size:clamp(22px,2cqw,28px);font-weight:600;line-height:1.25">Первый шаг — одна встреча</span>
+            <button onClick="{{ openModal }}" data-magnetic="" style="position:relative;display:flex;align-items:center;gap:18px;padding:8px 8px 8px 28px;border:none;border-radius:999px;background:#fff;color:#1b1b1a;font-size:16px;font-weight:600;cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1)">
+              <span>Записаться на консультацию</span>
+              <span style="width:52px;height:52px;border-radius:50%;background:#1b1b1a;display:grid;place-items:center"><span style="width:24px;height:24px;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat"></span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section data-hsec="" id="results" style="position:relative;height:320vh;background:#1b1b1a;color:#f2efe9">
+  <div style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:clamp(18px,4vh,56px)">
+    <div style="max-width:1320px;width:100%;margin:0 auto;padding:0 clamp(20px,5cqw,72px)">
+      <h2 style="margin:0;font-weight:600;font-size:clamp(30px,3.4cqw,52px);line-height:1.12;letter-spacing:-0.02em;max-width:760px">Сферы, в которых мои клиенты получают <span style="color:#e09a76">изменения</span> после совместной работы</h2>
+    </div>
+    <div data-htrack="" style="display:flex;gap:24px;padding:0 clamp(20px,5cqw,72px);width:max-content;will-change:transform">
+      <div style="flex:none;width:min(78cqw,380px);height:clamp(340px,60vh,440px);border-radius:28px;background:linear-gradient(160deg,#fdfdfc 0%,#f8f7f4 100%);color:#2a2a28;padding:min(38px,4vh);display:flex;flex-direction:column;gap:min(22px,2.4vh);border:1px solid transparent;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.3)">
+        <span style="width:min(72px,9vh);height:min(72px,9vh);border-radius:22px;background:rgba(163,80,44,.12);display:grid;place-items:center"><span style="width:min(34px,4.3vh);height:min(34px,4.3vh);background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/eye.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/eye.svg) center/contain no-repeat"></span></span>
+        <span style="font-size:24px;font-weight:600;line-height:1.25">Понимание себя</span>
+        <span style="font-size:16px;line-height:1.6;color:#4a4743">Научились лучше распознавать и замечать свои чувства, ориентироваться на них, доверять себе, понимать причины своих эмоций и как с ними быть.</span>
+      </div>
+      <div style="flex:none;width:min(78cqw,380px);height:clamp(340px,60vh,440px);border-radius:28px;background:#e09a76;color:#2a1a12;padding:min(38px,4vh);display:flex;flex-direction:column;gap:min(22px,2.4vh);border:1px solid transparent;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.3)">
+        <span style="width:min(72px,9vh);height:min(72px,9vh);border-radius:22px;background:rgba(255,255,255,.32);display:grid;place-items:center"><span style="width:min(34px,4.3vh);height:min(34px,4.3vh);background:#6b2f1c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/messages-square.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/messages-square.svg) center/contain no-repeat"></span></span>
+        <span style="font-size:24px;font-weight:600;line-height:1.25">Новый способ коммуникации</span>
+        <span style="font-size:16px;line-height:1.6;color:#4a2e20">Обрели навык общения с другими с опорой на свои границы, научились вступать в контакт спокойно и уверенно, без потребности защищаться.</span>
+      </div>
+      <div style="flex:none;width:min(78cqw,380px);height:clamp(340px,60vh,440px);border-radius:28px;background:#a3502c;color:#fff;padding:min(38px,4vh);display:flex;flex-direction:column;gap:min(22px,2.4vh);border:1px solid transparent;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.3)">
+        <span style="width:min(72px,9vh);height:min(72px,9vh);border-radius:22px;background:rgba(255,255,255,.16);display:grid;place-items:center"><span style="width:min(34px,4.3vh);height:min(34px,4.3vh);background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/heart-handshake.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/heart-handshake.svg) center/contain no-repeat"></span></span>
+        <span style="font-size:24px;font-weight:600;line-height:1.25">Бережное отношение<br>к себе</span>
+        <span style="font-size:16px;line-height:1.6;color:#f6e3da">Научились принятию разных сторон своей личности, выстроили понимающий и поддерживающий внутренний диалог с собой вместо критики.</span>
+      </div>
+      <div style="flex:none;width:min(78cqw,380px);height:clamp(340px,60vh,440px);border-radius:28px;background:#262624;color:#f2efe9;padding:min(38px,4vh);display:flex;flex-direction:column;gap:min(22px,2.4vh);border:1px solid rgba(255,255,255,.06);transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.3)">
+        <span style="width:min(72px,9vh);height:min(72px,9vh);border-radius:22px;background:rgba(224,154,118,.14);display:grid;place-items:center"><span style="width:min(34px,4.3vh);height:min(34px,4.3vh);background:#e09a76;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sparkles.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sparkles.svg) center/contain no-repeat"></span></span>
+        <span style="font-size:24px;font-weight:600;line-height:1.25">Познание себя <br>и раскрытие потенциала</span>
+        <span style="font-size:16px;line-height:1.6;color:#a19e97">Исследовали свои сильные стороны и ценности, поняли, что им действительно нравится, научились мечтать и ставить цели. Укрепили самооценку и почувствовали стремление менять свою жизнь к лучшему.</span>
+      </div>
+      <div style="flex:none;width:min(78cqw,380px);height:clamp(340px,60vh,440px);border-radius:28px;background:#6b2f1c;color:#fff;padding:min(38px,4vh);display:flex;flex-direction:column;gap:min(22px,2.4vh);border:1px solid transparent;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.3)">
+        <span style="width:min(72px,9vh);height:min(72px,9vh);border-radius:22px;background:rgba(255,255,255,.14);display:grid;place-items:center"><span style="width:min(34px,4.3vh);height:min(34px,4.3vh);background:#f3c3a8;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/anchor.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/anchor.svg) center/contain no-repeat"></span></span>
+        <span style="font-size:24px;font-weight:600;line-height:1.25">Опора на себя <br>и доверие себе</span>
+        <span style="font-size:16px;line-height:1.6;color:#f3d6c6">Развили навык ориентироваться в первую очередь на свои ощущения при принятии решений, снизили напряжение перед ответственностью, смогли почувствовать себя авторами своей жизни.</span>
+      </div>
+      <div style="flex:none;width:min(78cqw,380px);height:clamp(340px,60vh,440px);border-radius:28px;background:#f1dccf;color:#2a2a28;padding:min(38px,4vh);display:flex;flex-direction:column;gap:min(22px,2.4vh);border:1px solid transparent;transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.3)">
+        <span style="width:min(72px,9vh);height:min(72px,9vh);border-radius:22px;background:rgba(163,80,44,.14);display:grid;place-items:center"><span style="width:min(34px,4.3vh);height:min(34px,4.3vh);background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sun.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/sun.svg) center/contain no-repeat"></span></span>
+        <span style="font-size:24px;font-weight:600;line-height:1.25">Появление интереса <br>к себе и к жизни</span>
+        <span style="font-size:16px;line-height:1.6;color:#5a4a40">Разблокировали возможность испытывать разные чувства и выдерживать их, научились относиться к себе с любопытством и пониманием, нашли в себе смелость выстраивать уникальный жизненный путь.</span>
+      </div>
+    </div>
+    <div style="max-width:1320px;width:100%;margin:0 auto;padding:0 clamp(20px,5cqw,72px)">
+      <div style="height:2px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden"><div data-hbar="" style="height:100%;background:#e09a76;transform-origin:0 50%;transform:scaleX(0)"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise" style="background:#1b1b1a">
+  <div style="position:relative;isolation:isolate;overflow:clip;background:#ebe8e1;border-radius:{{ rs.secRadius }};padding:clamp(96px,12cqw,160px) 0 clamp(80px,10cqw,140px)">
+    <div data-blob="0" style="position:absolute;right:-12cqw;top:-4%;width:46cqw;height:46cqw;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.75),transparent 68%);filter:blur(30px);pointer-events:none;z-index:-1"></div>
+    
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(48px,6cqw,96px);align-items:center">
+      <div>
+        <h2 data-reveal="up" style="margin:0 0 {{ rs.h2mb }};font-weight:600;font-size:clamp(32px,3.6cqw,54px);line-height:1.12;letter-spacing:-0.02em">Вы можете доверять <span style="color:#a3502c">моей экспертности</span></h2>
+        <div style="display:grid;grid-template-columns:{{ rs.statCols }};gap:{{ rs.statGap }}">
+          <div data-reveal="up" data-delay="0" style="display: flex; flex-direction: {{ rs.statDir }}; align-items: {{ rs.statAlign }}; gap: {{ rs.statItemGap }}; padding-top: 18px; border-top: 1px solid rgba(42,42,40,.16); border-color: #2A2A2800"><span style="flex:none;min-width:{{ rs.numW }};font-size:clamp(48px,4.4cqw,68px);line-height:1;font-weight:300;color:#2a2a28;font-variant-numeric:tabular-nums;letter-spacing:-0.02em"><span data-count="4">4</span></span><span style="font-size:15px;line-height:1.45;color:#4a4743">года частной практики</span></div>
+          <div data-reveal="up" data-delay="100" style="display: flex; flex-direction: {{ rs.statDir }}; align-items: {{ rs.statAlign }}; gap: {{ rs.statItemGap }}; padding-top: 18px; border-top: 1px solid rgba(42,42,40,.16); border-color: #2A2A2800"><span style="flex:none;min-width:{{ rs.numW }};font-size:clamp(48px,4.4cqw,68px);line-height:1;font-weight:300;color:#2a2a28;font-variant-numeric:tabular-nums;letter-spacing:-0.02em"><span data-count="600">600</span></span><span style="font-size:15px;line-height:1.45;color:#4a4743">часов дополнительного обучения</span></div>
+          <div data-reveal="up" data-delay="200" style="display: flex; flex-direction: {{ rs.statDir }}; align-items: {{ rs.statAlign }}; gap: {{ rs.statItemGap }}; padding-top: 18px; border-top: 1px solid rgba(42,42,40,.16); border-color: #2A2A2800"><span style="flex:none;min-width:{{ rs.numW }};font-size:clamp(48px,4.4cqw,68px);line-height:1;font-weight:300;color:#2a2a28;font-variant-numeric:tabular-nums;letter-spacing:-0.02em"><span data-count="30">30</span><span style="color:#a3502c">+</span></span><span style="font-size:15px;line-height:1.45;color:#4a4743">публичных тренингов и лекций</span></div>
+          <div data-reveal="up" data-delay="0" style="display: flex; flex-direction: {{ rs.statDir }}; align-items: {{ rs.statAlign }}; gap: {{ rs.statItemGap }}; padding-top: 18px; border-top: 1px solid rgba(42,42,40,.16); border-color: #2A2A2800"><span style="flex:none;min-width:{{ rs.numW }};font-size:clamp(48px,4.4cqw,68px);line-height:1;font-weight:300;color:#2a2a28;font-variant-numeric:tabular-nums;letter-spacing:-0.02em"><span data-count="5">5</span></span><span style="font-size:15px;line-height:1.45;color:#4a4743">публикаций в научных журналах</span></div>
+          <div data-reveal="up" data-delay="100" style="display: flex; flex-direction: {{ rs.statDir }}; align-items: {{ rs.statAlign }}; gap: {{ rs.statItemGap }}; padding-top: 18px; border-top: 1px solid rgba(42,42,40,.16); border-color: #2A2A2800"><span style="flex:none;min-width:{{ rs.numW }};font-size:clamp(48px,4.4cqw,68px);line-height:1;font-weight:300;color:#2a2a28;font-variant-numeric:tabular-nums;letter-spacing:-0.02em"><span data-count="5,5">5,5</span></span><span style="font-size:15px;line-height:1.45;color:#4a4743">лет обучения в медицинском ВУЗе</span></div>
+          <div data-reveal="up" data-delay="200" style="display: flex; flex-direction: {{ rs.statDir }}; align-items: {{ rs.statAlign }}; gap: {{ rs.statItemGap }}; padding-top: 18px; border-top: 1px solid rgba(42,42,40,.16); border-color: #2A2A2800"><span style="flex:none;min-width:{{ rs.numW }};font-size:clamp(48px,4.4cqw,68px);line-height:1;font-weight:300;color:#2a2a28;font-variant-numeric:tabular-nums;letter-spacing:-0.02em"><span data-count="7">7</span><span style="color:#a3502c">+</span></span><span style="font-size:15px;line-height:1.45;color:#4a4743">лет в личной терапии</span></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ rs.expCols }};gap:{{ rs.expGap }}">
+        <div data-reveal="clip" data-delay="0" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4.4;background:#dcd9d2"><image-slot id="expert-1" shape="rect" mask="inset(0)" src="assets/g1.png" placeholder="Фото 1"></image-slot></div>
+        <div data-reveal="clip" data-delay="120" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4.4;background:#dcd9d2"><image-slot id="expert-2" shape="rect" mask="inset(0)" src="assets/g2.png" placeholder="Фото 2"></image-slot></div>
+        <div data-reveal="clip" data-delay="240" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4.4;background:#dcd9d2"><image-slot id="expert-3" shape="rect" mask="inset(0)" src="assets/g3.png" placeholder="Фото 3"></image-slot></div>
+        <div data-reveal="clip" data-delay="360" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4.4;background:#dcd9d2"><image-slot id="expert-4" shape="rect" mask="inset(0)" src="assets/g4.png" placeholder="Фото 4"></image-slot></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div style="overflow:hidden;padding:28px 0;border-top:1px solid rgba(42,42,40,.12);border-bottom:1px solid rgba(42,42,40,.12)">
+  <div data-marquee="38000" style="display:flex;width:max-content;font-size:clamp(28px,3.4cqw,48px);font-weight:500;white-space:nowrap;color:#2a2a28">
+    <span style="display:flex;gap:48px;padding-right:48px;align-items:center"><span>Бережность</span><span style="color:#a3502c">✦</span><span style="color:#a3502c">без оценки</span><span style="color:#a3502c">✦</span><span>в вашем темпе</span><span style="color:#a3502c">✦</span><span style="color:#a3502c">конфиденциально</span><span style="color:#a3502c">✦</span><span>фокус на изменениях</span><span style="color:#a3502c">✦</span></span>
+    <span style="display:flex;gap:48px;padding-right:48px;align-items:center"><span>Бережность</span><span style="color:#a3502c">✦</span><span style="color:#a3502c">без оценки</span><span style="color:#a3502c">✦</span><span>в вашем темпе</span><span style="color:#a3502c">✦</span><span style="color:#a3502c">конфиденциально</span><span style="color:#a3502c">✦</span><span>фокус на изменениях</span><span style="color:#a3502c">✦</span></span>
+  </div>
+</div>
+
+<!-- PRICES -->
+<section id="prices" style="position:relative;isolation:isolate;overflow:clip;padding:clamp(96px,12cqw,160px) 0 clamp(80px,10cqw,120px)">
+  <div data-blob="1" style="position: absolute; left: -12cqw; top: 24%; width: 44cqw; height: 44cqw; border-radius: 80%; background: radial-gradient(circle,rgba(255,255,255,.75),transparent 68%); filter: blur(80px); pointer-events: none; z-index: -1"></div>
+  
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,5cqw,72px)">
+    
+    <h2 data-reveal="up" style="margin:0 0 56px;font-weight:600;font-size:clamp(32px,3.6cqw,54px);line-height:1.12;letter-spacing:-0.02em">Форматы <span style="color:#a3502c">и стоимость</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px">
+      <div data-reveal="up" data-delay="0"><div style="height:100%;border-radius:28px;background:linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border:1px solid rgba(255,255,255,.85);padding:{{ rs.pricePad }};display:flex;flex-direction:column;gap:{{ rs.priceGap }};transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s" style-hover="transform:translateY(-8px);box-shadow:0 30px 60px rgba(50,45,35,.1)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap"><h3 style="margin:0;font-size:28px;font-weight:600;line-height:1.2">Первая консультация</h3><span style="padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(42,42,40,.18); font-size: 13px; color: #2a1a12; font-weight: 500; background-color: #e09a76; border-color: #2A2A2800">50–55 минут · онлайн или очно</span></div>
+        <div style="display:flex;flex-direction:column;gap:14px;font-size:16px;line-height:1.65;color:#4a4743;flex:1">
+          <p style="margin:0">На первой встрече мы знакомимся и говорим о том, что вас беспокоит. Мне важно узнать о вас и вашем запросе как можно больше, а вам понять — комфортно ли, хочется ли продолжать совместную работу.</p>
+          <p style="margin:0">Мы не идем в глубину, но я помогаю сформулировать запрос и мишени работы, а также составляю рекомендации.</p>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding-top:24px;border-top:1px solid rgba(42,42,40,.12)"><span style="font-size:48px;line-height:1;font-weight:500;letter-spacing:-0.02em">3000 ₽</span><span style="font-size:16px;color:#4a4743">/ час</span></div>
+      </div></div>
+      <div data-reveal="up" data-delay="120"><div style="height:100%;border-radius:28px;background:#1b1b1a;color:#f2efe9;padding:{{ rs.pricePad }};display:flex;flex-direction:column;gap:{{ rs.priceGap }};transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s;position:relative;overflow:hidden" style-hover="transform:translateY(-8px);box-shadow:0 30px 60px rgba(20,20,20,.25)">
+        <div style="position:absolute;right:-90px;bottom:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(224,154,118,.55),transparent 70%);pointer-events:none"></div>
+        <div style="position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap"><h3 style="margin:0;font-size:28px;font-weight:600;line-height:1.2">Индивидуальная терапия</h3><span style="padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); font-size: 13px; color: #2a1a12; font-weight: 500; border-color: #FFFFFF00; background-color: #e09a76">регулярные встречи</span></div>
+        <div style="position:relative;display:flex;flex-direction:column;gap:14px;font-size:16px;line-height:1.65;color:#a19e97;flex:1">
+          <p style="margin:0">Это регулярные консультации, на которых мы работаем по вашему актуальному запросу, без следования строгому протоколу.</p>
+          <p style="margin:0">Работа строится гибко с ориентацией на ваши индивидуальные потребности, на встречах я предлагаю упражнения или техники, после выполнения которых мы подробно обсуждаем процесс, ваши чувства и мысли. Также вы получаете домашние задания, которые помогают мягко внедрить изменения в вашу повседневную жизнь.</p>
+        </div>
+        <div style="position:relative;display:flex;align-items:baseline;gap:10px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)"><span style="font-size:48px;line-height:1;font-weight:500;letter-spacing:-0.02em">3000 ₽</span><span style="font-size:16px;color:#a19e97">/ час</span></div>
+      </div></div>
+    </div>
+    <div data-reveal="up" style="margin-top:20px">
+      <div style="border-radius: 28px; border: 1px solid rgba(42,42,40,.16); padding: clamp(28px,4cqw,44px) clamp(28px,4cqw,52px); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: {{ rs.blueWrap }}; background-color: #e09a76">
+        <p style="margin: 0; font-size: clamp(20px,2cqw,26px); font-weight: 500; line-height: 1.35; max-width: 620px; color: #2a1a12">Не знаете, какой формат выбрать? Начните с первой встречи — мы определим его вместе.</p>
+        <button onClick="{{ openModal }}" data-magnetic="" style="display: flex; align-items: center; gap: 18px; padding: 8px 8px 8px 28px; border: none; border-radius: 999px; background: #1d1d1c; color: #fff; font-size: 16px; font-weight: 500; cursor: pointer; transition: transform .5s cubic-bezier(.16,1,.3,1),background .4s; width: 300px; flex: none" style-hover="background:#a3502c;--circ:#1d1d1c;--arr:#fff">
+          <span>Узнать доступные опции</span><span style="width: 52px; height: 52px; border-radius: 50%; background: var(--circ,#e09a76); transition: background .4s; display: grid; place-items: center; justify-content: center; align-self: auto; margin-left: 0px"><span style="width:24px;height:24px;background:var(--arr,#2a1a12);transition:background .4s;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat"></span></span>
+          
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" style="position:relative;isolation:isolate;overflow:clip;padding:clamp(80px,10cqw,140px) 0;background:#e3e0d8">
+  <div data-blob="0" style="position:absolute;left:20%;top:-10%;width:40cqw;height:40cqw;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.75),transparent 68%);filter:blur(30px);pointer-events:none;z-index:-1"></div>
+  
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,5cqw,72px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px">
+      <h2 data-reveal="up" style="margin:0;font-weight:600;font-size:clamp(32px,3.6cqw,54px);line-height:1.12;letter-spacing:-0.02em">Отзывы <span style="color:#a3502c">клиентов</span></h2>
+      <div data-reveal="up" data-delay="120" style="display:flex;gap:12px">
+        <button onClick="{{ revPrev }}" aria-label="Назад" style="width:60px;height:60px;border-radius:50%;border:1px solid rgba(42,42,40,.25);background:transparent;cursor:pointer;display:grid;place-items:center;transition:background .3s,border-color .3s" style-hover="background:#1b1b1a;border-color:#1b1b1a"><span style="width:22px;height:22px;background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-left.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-left.svg) center/contain no-repeat"></span></button>
+        <button onClick="{{ revNext }}" aria-label="Вперед" style="width:60px;height:60px;border-radius:50%;border:1px solid rgba(42,42,40,.25);background:transparent;cursor:pointer;display:grid;place-items:center;transition:background .3s,border-color .3s" style-hover="background:#1b1b1a;border-color:#1b1b1a"><span style="width:22px;height:22px;background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat"></span></button>
+      </div>
+    </div>
+  </div>
+  <div ref="{{ revRef }}" style="display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 max(clamp(20px,5cqw,72px),calc((100cqw - 1320px)/2 + clamp(20px,5cqw,72px)))">
+    <div data-reveal="up" data-delay="0" style="flex:none;width:min(80cqw,360px);aspect-ratio:3/4;scroll-snap-align:start"><image-slot id="review-1" shape="rounded" radius="24" placeholder="Скриншот отзыва 1"></image-slot></div>
+    <div data-reveal="up" data-delay="100" style="flex:none;width:min(80cqw,360px);aspect-ratio:3/4;scroll-snap-align:start"><image-slot id="review-2" shape="rounded" radius="24" placeholder="Скриншот отзыва 2"></image-slot></div>
+    <div data-reveal="up" data-delay="200" style="flex:none;width:min(80cqw,360px);aspect-ratio:3/4;scroll-snap-align:start"><image-slot id="review-3" shape="rounded" radius="24" placeholder="Скриншот отзыва 3"></image-slot></div>
+    <div data-reveal="up" data-delay="300" style="flex:none;width:min(80cqw,360px);aspect-ratio:3/4;scroll-snap-align:start"><image-slot id="review-4" shape="rounded" radius="24" placeholder="Скриншот отзыва 4"></image-slot></div>
+    <div data-reveal="up" data-delay="400" style="flex:none;width:min(80cqw,360px);aspect-ratio:3/4;scroll-snap-align:start"><image-slot id="review-5" shape="rounded" radius="24" placeholder="Скриншот отзыва 5"></image-slot></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="position:relative;isolation:isolate;overflow:clip;padding:clamp(96px,12cqw,160px) 0">
+  <div data-blob="2" style="position: absolute; left: -14cqw; top: 40%; width: 44cqw; height: 44cqw; border-radius: 50%; background: radial-gradient(circle,rgba(255,255,255,.75),transparent 68%); filter: blur(30px); pointer-events: none; z-index: -1"></div>
+  <div data-blob="0" style="position:absolute;right:-12cqw;bottom:-6%;width:42cqw;height:42cqw;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.75),transparent 68%);filter:blur(30px);pointer-events:none;z-index:-1"></div>
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,5cqw,72px);display:flex;flex-wrap:wrap;gap:48px clamp(48px,6cqw,96px);align-items:flex-start">
+    <div style="position:{{ rs.stickyPos }};top:120px;flex:1 1 300px">
+      <h2 data-reveal="up" style="margin:0 0 20px;font-weight:600;font-size:clamp(32px,3.6cqw,54px);line-height:1.12;letter-spacing:-0.02em">Частые <span style="color:#a3502c">вопросы</span></h2>
+      <p data-reveal="up" data-delay="100" style="margin:0;font-size:16px;line-height:1.6;color:#4a4743;max-width:340px">Если вашего вопроса здесь нет, задайте его при записи — я отвечу лично.</p>
+    </div>
+    <div style="flex:2 1 560px;min-width:0;display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ faqItems }}" as="f" hint-placeholder-count="6">
+        <div style="border-radius:22px;background:{{ f.bg }};transition:background .5s,box-shadow .5s;box-shadow:{{ f.shadow }}">
+          <button onClick="{{ f.toggle }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:{{ rs.faqGap }};padding:{{ rs.faqPad }};background:transparent;border:none;cursor:pointer;text-align:left;color:#2a2a28">
+            <span style="display:flex;align-items:baseline;gap:18px"><span style="font-size:13px;font-weight:600;color:#a3502c;letter-spacing:.1em">{{ f.n }}</span><span style="font-size:clamp(17px,1.5cqw,20px);font-weight:600;line-height:1.35">{{ f.q }}</span></span>
+            <span style="flex:none;position:relative;width:40px;height:40px;border-radius:50%;background:{{ f.iconBg }};transition:background .5s,transform .6s cubic-bezier(.16,1,.3,1);transform:rotate({{ f.rot }})">
+              <span style="position:absolute;left:12px;right:12px;top:19px;height:2px;background:{{ f.iconFg }};border-radius:2px"></span>
+              <span style="position:absolute;top:12px;bottom:12px;left:19px;width:2px;background:{{ f.iconFg }};border-radius:2px"></span>
+            </span>
+          </button>
+          <div style="display:grid;grid-template-rows:{{ f.rows }};transition:grid-template-rows .6s cubic-bezier(.16,1,.3,1)">
+            <div style="overflow:hidden">
+              <p style="margin:0;padding:{{ rs.faqAPad }};font-size:16px;line-height:1.7;color:#4a4743;max-width:760px;opacity:{{ f.op }};transition:opacity .5s">{{ f.a }}</p>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="contact" style="padding:0 clamp(10px,2cqw,24px) clamp(10px,2cqw,24px)">
+  <div style="position:relative;overflow:hidden;border-radius:{{ rs.contactRadius }};background:#1b1b1a;color:#f2efe9">
+    <div ref="{{ glowRef }}" style="position:absolute;left:30%;top:20%;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(163,80,44,.38),transparent 65%);pointer-events:none;will-change:transform"></div>
+    <div style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(80px,10cqw,140px) clamp(20px,5cqw,72px) clamp(56px,6cqw,80px);display:grid;grid-template-columns:{{ rs.contactCols }};gap:{{ rs.contactGap }};align-items:center">
+      <div>
+        <h2 data-reveal="up" style="margin:0 0 28px;font-weight:600;font-size:clamp(40px,5cqw,76px);line-height:1.05;letter-spacing:-0.03em">Давайте начнем <span style="display:block;color:#e09a76">с одной встречи</span></h2>
+        <p data-reveal="up" data-delay="100" style="margin:0 0 44px;font-size:clamp(17px,1.5cqw,20px);line-height:1.55;color:#a19e97;max-width:460px">Вы можете прийти с вопросами, сомнениями и даже с пониманием, что пока не знаете, с чего начать.</p>
+        <div data-reveal="up" data-delay="200" style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+          <button onClick="{{ openModal }}" data-magnetic="" style="display: flex; align-items: center; gap: 22px; padding: 10px 10px 10px 34px; border: none; border-radius: 999px; background: #a3502c; color: #fff; font-size: 18px; font-weight: 600; cursor: pointer; transition: transform .5s cubic-bezier(.16,1,.3,1),background .4s,box-shadow .4s; box-shadow: 0 18px 50px rgba(163,80,44,.35)" style-hover="background:#b45d36;box-shadow:0 24px 60px rgba(163,80,44,.5)">
+            <span>Записаться на консультацию</span>
+            <span style="width:60px;height:60px;border-radius:50%;background:#fff;display:grid;place-items:center"><span style="width:26px;height:26px;background:#a3502c;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/arrow-right.svg) center/contain no-repeat"></span></span>
+          </button>
+          <span style="display:flex;gap:12px;align-items:center;font-size:14px;color:#8d8b86;padding-left:20px"><span>Онлайн</span><span style="width:4px;height:4px;border-radius:50%;background:#e09a76"></span><span>60 минут</span><span style="width:4px;height:4px;border-radius:50%;background:#e09a76"></span><span>Конфиденциально</span></span>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <div data-reveal="clip" style="position:relative;width:min(100%,480px);aspect-ratio:1204/1240;border-radius:28px;overflow:hidden;background:#2a2a28">
+          <image-slot id="contact-photo-2" shape="rect" mask="inset(0)" src="assets/contact.png" placeholder="Фото для финального блока"></image-slot>
+        </div>
+      </div>
+    </div>
+    <div style="position:relative;overflow:hidden;padding:24px 0 8px">
+      <div data-marquee="60000" style="display:flex;width:max-content;white-space:nowrap;font-size:clamp(80px,13cqw,200px);font-weight:700;letter-spacing:-0.04em;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(242,239,233,.22)">
+        <span style="padding-right:80px">Екатерина Глебова · психолог ·</span><span style="padding-right:80px">Екатерина Глебова · психолог ·</span>
+      </div>
+    </div>
+    <div style="position:relative;max-width:1320px;margin:0 auto;padding:28px clamp(20px,5cqw,72px) 36px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:#8d8b86;border-top:1px solid rgba(255,255,255,.08)">
+      <span>© 2026 Екатерина Глебова, клинический психолог</span>
+      <a href="#top" style="color:#c9c6bf">Наверх ↑</a>
+    </div>
+  </div>
+</section>
+</div>
+</div>
+
+<!-- FIXED UI LAYER (portrait + phone): floating burger after the hero + full-screen menu. Sized to the page frame. -->
+<div style="position:fixed;top:0;left:50%;transform:translateX(-50%);width:{{ wrapW }};max-width:100%;height:100svh;container-type:inline-size;pointer-events:none;z-index:70">
+<sc-if value="{{ hasMenu }}" hint-placeholder-val="{{ false }}">
+  <button ref="{{ fabRef }}" onClick="{{ openMenu }}" aria-label="Открыть меню" style="position:absolute;top:max(12px,2.6cqw);right:max(12px,3.1cqw);width:48px;height:48px;border-radius:50%;border:none;background:#111;box-shadow:0 12px 30px rgba(20,20,20,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0;cursor:pointer;opacity:0;transform:translateY(-14px) scale(.85);pointer-events:none;transition:opacity .4s,transform .6s cubic-bezier(.16,1,.3,1)">
+    <span style="display:block;width:22px;height:2.5px;border-radius:2px;background:#fff"></span>
+    <span style="display:block;width:22px;height:2.5px;border-radius:2px;background:#fff"></span>
+  </button>
+  <!-- MOBILE MENU (portrait + phone) -->
+  <div style="position:absolute;left:0;right:0;top:0;height:min(100%,100svh);z-index:40;background:#1b1b1a;color:#f2efe9;display:flex;flex-direction:column;gap:max(28px,6cqw);padding:max(18px,3.4cqw) max(20px,5.4cqw) max(28px,6cqw);opacity:{{ menuOp }};pointer-events:{{ menuPE }};clip-path:{{ menuClip }};transition:opacity .5s,clip-path .8s cubic-bezier(.77,0,.18,1)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <span style="font-size:max(14px,2.4cqw);font-weight:600;letter-spacing:.05em;white-space:nowrap">ЕКАТЕРИНА ГЛЕБОВА</span>
+      <button onClick="{{ closeMenu }}" aria-label="Закрыть меню" style="flex:none;width:max(44px,5.3cqw);height:max(44px,5.3cqw);border-radius:50%;border:none;background:#f2efe9;cursor:pointer;display:grid;place-items:center;padding:0">
+        <span style="width:46%;height:46%;background:#1b1b1a;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/x.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/x.svg) center/contain no-repeat"></span>
+      </button>
+    </div>
+    <nav style="display:flex;flex-direction:column">
+      <sc-for list="{{ menuLinks }}" as="l" hint-placeholder-count="4">
+        <a href="{{ l.href }}" onClick="{{ l.go }}" style="display:flex;justify-content:space-between;align-items:center;padding:max(16px,2.6cqw) 0;border-bottom:1px solid rgba(242,239,233,.14);color:#f2efe9;font-size:clamp(26px,5.4cqw,52px);font-weight:500;letter-spacing:-.01em" style-hover="color:#e09a76">
+          <span>{{ l.label }}</span><span style="font-size:.5em;color:#a19e97;font-weight:400">{{ l.n }}</span>
+        </a>
+      </sc-for>
+    </nav>
+    <button onClick="{{ menuBook }}" style="align-self:stretch;height:max(56px,9cqw);border:none;border-radius:999px;background:#8c4425;color:#fff;font-size:max(16px,2.6cqw);font-weight:500;cursor:pointer">Записаться на консультацию</button>
+  </div>
+</sc-if>
+</div>
+
+<!-- MODAL -->
+<div style="position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:20px;background:rgba(20,20,19,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:{{ modalOp }};pointer-events:{{ modalPE }};transition:opacity .5s" onClick="{{ closeModal }}">
+  <div onClick="{{ stop }}" style="position:relative;width:min(100%,520px);border-radius:32px;background:#f6f4f0;padding:clamp(28px,4vw,44px);box-shadow:0 40px 100px rgba(0,0,0,.3);transform:{{ modalTf }};transition:transform .7s cubic-bezier(.16,1,.3,1)">
+    <button onClick="{{ closeModal }}" aria-label="Закрыть" style="position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;border:none;background:#e6e3dc;cursor:pointer;display:grid;place-items:center"><span style="width:20px;height:20px;background:#2a2a28;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/x.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/x.svg) center/contain no-repeat"></span></button>
+    <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+      <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:18px">
+        <h3 style="margin:0 0 6px;font-size:30px;font-weight:600;line-height:1.15;padding-right:48px">Запись на <span style="color:#a3502c">консультацию</span></h3>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <sc-for list="{{ fmtItems }}" as="o" hint-placeholder-count="2">
+            <button type="button" onClick="{{ o.pick }}" style="padding:12px 18px;border-radius:999px;border:1px solid {{ o.border }};background:{{ o.bg }};color:{{ o.fg }};font-size:14px;font-weight:600;cursor:pointer;transition:all .3s">{{ o.label }}</button>
+          </sc-for>
+        </div>
+        
+        <input required="" placeholder="Ваше имя" style="padding:18px 20px;border-radius:16px;border:1px solid rgba(42,42,40,.16);background:#fff;font-size:16px;outline:none;color:#2a2a28">
+        <input required="" placeholder="Telegram или телефон" style="padding:18px 20px;border-radius:16px;border:1px solid rgba(42,42,40,.16);background:#fff;font-size:16px;outline:none;color:#2a2a28">
+        <button type="submit" style="margin-top:6px;padding:20px;border:none;border-radius:999px;background:#a3502c;color:#fff;font-size:17px;font-weight:600;cursor:pointer;transition:background .3s" style-hover="background:#8c4425">Отправить заявку</button>
+        <span style="font-size:13px;color:#8d8b86;text-align:center">Я свяжусь с вами в течение дня. Все данные конфиденциальны.</span>
+      </form>
+    </sc-if>
+    <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px;padding:20px 0 8px">
+        <span style="width:64px;height:64px;border-radius:50%;background:#a3502c;display:grid;place-items:center"><span style="width:30px;height:30px;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@0.454.0/icons/check.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.454.0/icons/check.svg) center/contain no-repeat"></span></span>
+        <h3 style="margin:0;font-size:30px;font-weight:600;line-height:1.15">Спасибо, заявка отправлена</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#4a4743">Я напишу вам, чтобы договориться о времени встречи. Вы уже сделали важный первый шаг.</p>
+      </div>
+    </sc-if>
+  </div>
+</div>
+
+<sc-if value="{{ cursorOn }}" hint-placeholder-val="{{ false }}">
+  <div ref="{{ cursorRef }}" style="position:fixed;top:0;left:0;width:16px;height:16px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;z-index:200;opacity:0;transition:opacity .3s"></div>
+</sc-if>
+
+<sc-if value="{{ intro }}" hint-placeholder-val="{{ false }}">
+  <div ref="{{ introRef }}" style="position:fixed;inset:0;z-index:300;background:#1b1b1a;color:#f2efe9;display:grid;place-items:center">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:22px">
+      <div style="display:flex;gap:.3em;font-size:clamp(34px,5vw,72px);font-weight:600;letter-spacing:-0.02em;line-height:1.05">
+        <span style="overflow:hidden;padding-bottom:.08em"><span data-iw="" style="display:block">Екатерина</span></span>
+        <span style="overflow:hidden;padding-bottom:.08em"><span data-iw="" style="display:block;color:#e09a76">Глебова</span></span>
+      </div>
+      <span data-il="" style="display:block;width:180px;height:1px;background:#e09a76;transform-origin:0 50%"></span>
+      <span style="overflow:hidden"><span data-iw="" style="display:block;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#8d8b86">клинический психолог</span></span>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;device&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;tablet-landscape&quot;,&quot;tablet-portrait&quot;,&quot;mini-tablet&quot;,&quot;phone&quot;],&quot;default&quot;:&quot;auto&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Устройство&quot;},&quot;introOn&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Анимации&quot;},&quot;cursorOn&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Анимации&quot;}}">
+const IC = (n) => `https://unpkg.com/lucide-static@0.454.0/icons/${n}.svg`;
+const FAQ = [
+  ['Как проходит первая встреча?', 'Мы знакомимся и говорим о том, что вас беспокоит. Это возможность понять, комфортно ли вам и хочется ли продолжать совместную работу. Я помогу сформулировать запрос и дам рекомендации.'],
+  ['Сколько встреч понадобится?', 'Это зависит от вашего запроса. Иногда достаточно нескольких консультаций, иногда работа длится дольше. Мы регулярно сверяемся с целями и вместе решаем, как двигаться дальше.'],
+  ['Как часто нужно встречаться?', 'Обычно раз в неделю. Такой ритм помогает сохранять контакт с процессом и постепенно внедрять изменения в повседневную жизнь.'],
+  ['Онлайн или очно?', 'Можно в любом формате. Встреча длится 50–55 минут, онлайн-сессии проходят по видеосвязи в удобное для вас время.'],
+  ['Что, если мне сложно говорить о себе?', 'Это нормально. Я не заставляю говорить о том, о чем вам пока не хочется: мы двигаемся в вашем темпе.'],
+  ['Это конфиденциально?', 'Да. Все, что вы рассказываете на встречах, остается между нами.']
+];
+const RESULTS = [
+  ['Понимание себя', 'eye', 'Научились лучше распознавать и замечать свои чувства, ориентироваться на них, доверять себе, понимать причины своих эмоций и как с ними быть.'],
+  ['Новый способ коммуникации', 'messages-square', 'Обрели навык общения с другими с опорой на свои границы, научились вступать в контакт спокойно и уверенно, без потребности защищаться.'],
+  ['Бережное отношение к себе', 'heart-handshake', 'Научились принятию разных сторон своей личности, выстроили понимающий и поддерживающий внутренний диалог с собой вместо критики.'],
+  ['Познание себя и раскрытие потенциала', 'sparkles', 'Исследовали свои сильные стороны и ценности, поняли, что им действительно нравится, научились мечтать и ставить цели. Укрепили самооценку и почувствовали стремление менять свою жизнь к лучшему.'],
+  ['Опора на себя и доверие себе', 'anchor', 'Развили навык ориентироваться в первую очередь на свои ощущения при принятии решений, снизили напряжение перед ответственностью, смогли почувствовать себя авторами своей жизни.'],
+  ['Появление интереса к себе и к жизни', 'sun', 'Разблокировали возможность испытывать разные чувства и выдерживать их, научились относиться к себе с любопытством и пониманием, нашли в себе смелость выстраивать уникальный жизненный путь.']
+];
+const EASE = 'cubic-bezier(.16,1,.3,1)';
+// Hero breakpoints: phone <600 · tabV 600–1024 · tabH 1025–1366 (coarse pointer) · desk otherwise
+const DEVICES = {
+  'tablet-landscape': { w: 1366, bp: 'tabH', label: 'Планшет, горизонтально · 1366 px' },
+  'tablet-portrait': { w: 1024, bp: 'tabV', label: 'Планшет, вертикально · 1024 px' },
+  'mini-tablet': { w: 768, bp: 'tabV', label: 'Мини-планшет · 768 px' },
+  'phone': { w: 390, bp: 'phone', label: 'Телефон · 390 px' }
+};
+const bpFor = (w, coarse) => w < 600 ? 'phone' : w <= 1024 ? 'tabV' : (w <= 1366 && coarse) ? 'tabH' : 'desk';
+const MENU = [['Обо мне', '#about'], ['Запросы', '#requests'], ['Условия', '#prices'], ['Отзывы', '#reviews']];
+const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+const plural = (n) => { const m10 = n % 10, m100 = n % 100; return (m10 === 1 && m100 !== 11) ? 'пункт' : (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) ? 'пункта' : 'пунктов'; };
+
+class Component extends DCLogic {
+  state = { intro: this.props.introOn ?? true, faq: 0, modal: false, sent: false, fmt: 0, menu: false };
+  rootRef = React.createRef(); progRef = React.createRef(); navRef = React.createRef();
+  heroTextRef = React.createRef(); heroParRef = React.createRef(); heroMouseRef = React.createRef(); ringRef = React.createRef();
+  stepsRef = React.createRef(); stepsLineRef = React.createRef(); trackRef = React.createRef();
+  fabRef = React.createRef(); revRef = React.createRef(); glowRef = React.createRef(); cursorRef = React.createRef(); introRef = React.createRef();
+
+  componentDidMount() {
+    const root = this.rootRef.current; if (!root) return;
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.tx = this.cx = innerWidth / 2; this.ty = this.cy = innerHeight / 2;
+    this.mx = this.my = this.hx = this.hy = 0; this.cs = 1; this.csT = 1;
+    this.setupReveals(root);
+    this.setupAmbient(root);
+    this.stepEls = [...root.querySelectorAll('[data-step]')];
+    this.dotEls = this.stepEls.map(s => s.querySelector('[data-stepdot]'));
+    this.onScroll = () => { if (!this.ticking) { this.ticking = true; requestAnimationFrame(() => { this.ticking = false; this.update(); }); } };
+    this.onResize = () => { this.syncVp && this.syncVp(); this.layout(); this.update(); };
+    this.onMove = (e) => this.handleMove(e);
+    addEventListener('scroll', this.onScroll, { passive: true });
+    addEventListener('resize', this.onResize);
+    this.mqCoarse = matchMedia('(pointer: coarse)');
+    this.syncVp = () => { const w = document.documentElement.clientWidth || innerWidth, c = this.mqCoarse.matches; if (DEVICES[this.props.device]) return; if (bpFor(w, c) !== this._renderedBp) this.forceUpdate(); };
+    this.ro = new ResizeObserver(this.syncVp); this.ro.observe(document.documentElement);
+    this.onCoarse = this.syncVp; this.mqCoarse.addEventListener('change', this.onCoarse);
+    requestAnimationFrame(this.syncVp); setTimeout(this.syncVp, 300);
+    addEventListener('pointermove', this.onMove, { passive: true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { this.layout(); this.update(); });
+    this.loop = () => { this.frame(); this.raf = requestAnimationFrame(this.loop); };
+    this.raf = requestAnimationFrame(this.loop);
+    this.layout(); this.update();
+    if (this.state.intro && !this.reduced) this.playIntro(); else { if (this.state.intro) this.setState({ intro: false }); this.playHero(200); }
+  }
+  componentDidUpdate(pp, ps) {
+    if (pp.resultsLayout !== this.props.resultsLayout) { this.layout(); this.update(); }
+    const bp = this.bp(), prevBp = this._bp; this._bp = bp;
+    if (prevBp && prevBp !== bp) { if (this.state.menu) this.setMenu(false); this.playHero(0); requestAnimationFrame(() => { this.layout(); this.update(); }); }
+    if (pp.device !== this.props.device) {
+      const root = this.rootRef.current;
+      if (root) { this.stepEls = [...root.querySelectorAll('[data-step]')]; this.dotEls = this.stepEls.map(s => s.querySelector('[data-stepdot]')); }
+      this.layout(); this.update();
+    }
+  }
+  bp() { const d = DEVICES[this.props.device]; if (d) return d.bp; if (typeof window === 'undefined') return 'desk'; return bpFor(document.documentElement.clientWidth || innerWidth, matchMedia('(pointer: coarse)').matches); }
+  setMenu(open) { document.documentElement.style.overflow = open ? 'hidden' : ''; this.setState({ menu: open }, () => this.update()); }
+  componentWillUnmount() {
+    removeEventListener('scroll', this.onScroll); removeEventListener('resize', this.onResize); removeEventListener('pointermove', this.onMove);
+    cancelAnimationFrame(this.raf); this.ro && this.ro.disconnect(); this.mqCoarse && this.mqCoarse.removeEventListener('change', this.onCoarse); this.io && this.io.disconnect(); this.cio && this.cio.disconnect();
+    document.documentElement.style.overflow = '';
+  }
+
+  setupReveals(root) {
+    if (this.reduced) return;
+    const hidden = { up: 'translate3d(0,56px,0)', scale: 'scale(.94)' };
+    const els = [...root.querySelectorAll('[data-reveal]')];
+    els.forEach(el => {
+      const t = el.dataset.reveal, d = +(el.dataset.delay || 0);
+      if (t === 'clip') { el.style.clipPath = 'inset(100% 0 0 0)'; el.style.transition = `clip-path 1.6s ${EASE} ${d}ms`; }
+      else { el.style.opacity = '0'; el.style.transform = hidden[t] || hidden.up; el.style.transition = `opacity 1.1s ${EASE} ${d}ms, transform 1.3s ${EASE} ${d}ms`; }
+    });
+    this.io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      if (el.dataset.reveal === 'clip') el.style.clipPath = 'inset(0 0 0 0)';
+      else { el.style.opacity = '1'; el.style.transform = 'none'; }
+      this.io.unobserve(el);
+    }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(el => this.io.observe(el));
+    this.pendingReveal = els;
+    this.cio = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      this.countUp(e.target); this.cio.unobserve(e.target);
+    }), { threshold: 0.6 });
+    root.querySelectorAll('[data-count]').forEach(el => { el.textContent = '0'; this.cio.observe(el); });
+  }
+  countUp(el) {
+    const raw = el.dataset.count, dec = raw.includes(',') ? 1 : 0, target = parseFloat(raw.replace(',', '.'));
+    const t0 = performance.now(), dur = 2000;
+    const step = (t) => {
+      const p = clamp((t - t0) / dur), e = 1 - Math.pow(2, -10 * p);
+      el.textContent = (p >= 1 ? target : target * e).toFixed(dec).replace('.', ',');
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  setupAmbient(root) {
+    if (this.reduced) return;
+    root.querySelectorAll('[data-blob]').forEach((el, i) => { const k = +el.dataset.blob || 0, dx = [40, -50, 30][k], dy = [30, 40, -35][k]; el.animate([{ transform: 'translate3d(0,0,0) scale(1)' }, { transform: `translate3d(${dx}px,${dy}px,0) scale(1.08)` }, { transform: 'translate3d(0,0,0) scale(1)' }], { duration: 16000 + k * 4000 + i * 700, iterations: Infinity, easing: 'ease-in-out' }); });
+    root.querySelectorAll('[data-marquee]').forEach(el => el.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-50%)' }], { duration: +el.dataset.marquee || 30000, iterations: Infinity }));
+    if (this.ringRef.current) this.ringRef.current.animate([{ transform: 'scale(1)', opacity: .6 }, { transform: 'scale(1.15)', opacity: 1 }, { transform: 'scale(1)', opacity: .6 }], { duration: 8000, iterations: Infinity, easing: 'ease-in-out' });
+  }
+  playIntro() {
+    document.documentElement.style.overflow = 'hidden';
+    setTimeout(() => {
+      const ov = this.introRef.current;
+      if (!ov) { document.documentElement.style.overflow = ''; this.playHero(0); return; }
+      ov.querySelectorAll('[data-iw]').forEach((el, i) => el.animate([{ transform: 'translateY(110%)' }, { transform: 'translateY(0)' }], { duration: 1000, delay: 150 + i * 140, easing: EASE, fill: 'backwards' }));
+      const line = ov.querySelector('[data-il]');
+      if (line) line.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: 1200, delay: 450, easing: EASE, fill: 'backwards' });
+      this.playHero(1750);
+      setTimeout(() => {
+        const a = ov.animate([{ clipPath: 'inset(0 0 0 0)' }, { clipPath: 'inset(0 0 100% 0)' }], { duration: 1100, easing: 'cubic-bezier(.77,0,.18,1)', fill: 'forwards' });
+        a.onfinish = () => { document.documentElement.style.overflow = ''; this.setState({ intro: false }); };
+      }, 1500);
+    }, 0);
+  }
+  playHero(base) {
+    const root = this.rootRef.current; if (!root || this.reduced) return;
+    root.querySelectorAll('[data-line]').forEach((el, i) => el.animate([{ transform: 'translateY(110%)' }, { transform: 'translateY(0)' }], { duration: 1300, delay: base + i * 110, easing: EASE, fill: 'backwards' }));
+    root.querySelectorAll('[data-hero-fade]').forEach((el, i) => el.animate([{ opacity: 0, translate: '0 30px' }, { opacity: 1, translate: '0 0' }], { duration: 1200, delay: base + 550 + i * 150, easing: EASE, fill: 'backwards' }));
+    const img = root.querySelector('[data-hero-img]');
+    if (img) img.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 2200, delay: Math.max(0, base - 400), easing: EASE, fill: 'backwards' });
+  }
+
+  handleMove(e) {
+    if (e.pointerType && e.pointerType !== 'mouse') return;
+    this.tx = e.clientX; this.ty = e.clientY;
+    this.mx = e.clientX / innerWidth * 2 - 1; this.my = e.clientY / innerHeight * 2 - 1;
+    const t = e.target && e.target.closest ? e.target : null; if (!t) return;
+    const s = t.closest('[data-spot]');
+    if (s) { const r = s.getBoundingClientRect(); s.style.setProperty('--mx', (e.clientX - r.left) + 'px'); s.style.setProperty('--my', (e.clientY - r.top) + 'px'); }
+    const m = t.closest('[data-magnetic]');
+    if (m !== this.magEl) { if (this.magEl) this.magEl.style.transform = ''; this.magEl = m; if (m) { m.style.transform = ''; this.magRect = m.getBoundingClientRect(); } }
+    if (m && this.magRect) {
+      const r = this.magRect, dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+      m.style.transform = `translate(${dx * 0.18}px, ${dy * 0.3}px)`;
+    }
+    this.csT = t.closest('a,button,[data-magnetic]') ? 3.2 : (t.closest('[data-spot]') ? 2 : 1);
+    const c = this.cursorRef.current; if (c && c.style.opacity !== '1') c.style.opacity = '1';
+  }
+  frame() {
+    const c = this.cursorRef.current;
+    if (c) {
+      this.cx += (this.tx - this.cx) * 0.2; this.cy += (this.ty - this.cy) * 0.2; this.cs += (this.csT - this.cs) * 0.15;
+      c.style.transform = `translate3d(${this.cx - 8}px,${this.cy - 8}px,0) scale(${this.cs})`;
+    }
+    if (this.reduced) return;
+    this.hx += (this.mx - this.hx) * 0.05; this.hy += (this.my - this.hy) * 0.05;
+    const hm = this.heroMouseRef.current;
+    if (hm && scrollY < innerHeight) hm.style.transform = `translate3d(${this.hx * -10}px,0,0)`;
+    const g = this.glowRef.current;
+    if (g) g.style.transform = `translate3d(${this.hx * 80}px,${this.hy * 60}px,0)`;
+  }
+  layout() {
+    const root = this.rootRef.current; if (!root) return;
+    root.querySelectorAll('[data-hsec]').forEach(s => { const t = s.querySelector('[data-htrack]'); if (t) s.style.height = Math.max(innerHeight * 1.5, t.scrollWidth - s.clientWidth + innerHeight * 1.2) + 'px'; });
+  }
+  updateSteps(vh) {
+    const st = this.stepsRef.current, dots = this.dotEls;
+    if (!st || !dots || !dots.length || !dots[0]) return;
+    const sr = st.getBoundingClientRect();
+    const ys = dots.map(d => { const r = d.getBoundingClientRect(); return r.top + r.height / 2 - sr.top; });
+    const first = ys[0], last = ys[ys.length - 1], len = Math.max(1, last - first);
+    [this.trackRef.current, this.stepsLineRef.current].forEach(l => { if (l) { l.style.top = first + 'px'; l.style.height = len + 'px'; } });
+    const mid = vh * 0.55, pos = mid - sr.top;
+    if (this.stepsLineRef.current) this.stepsLineRef.current.style.transform = `scaleY(${clamp((pos - first) / len)})`;
+    let a = 0; ys.forEach((y, i) => { if (y <= pos + 0.5) a = i; });
+    this.stepEls.forEach((el, i) => {
+      const reached = ys[i] <= pos + 0.5 || i === 0 && pos >= first;
+      el.style.opacity = i === a ? '1' : (i < a ? '.55' : '.32');
+      const d = dots[i];
+      d.style.background = reached ? '#a3502c' : '#ebe8e1';
+      d.style.boxShadow = i === a && reached ? '0 0 0 7px rgba(163,80,44,.16)' : 'none';
+    });
+  }
+  update() {
+    const y = scrollY, vh = innerHeight;
+    const hsecs = this.rootRef.current ? [...this.rootRef.current.querySelectorAll('[data-hsec]')] : [];
+    if (hsecs.some(s => s.offsetHeight < vh)) this.layout();
+    const docH = document.documentElement.scrollHeight - vh;
+    if (this.progRef.current) this.progRef.current.style.transform = `scaleX(${docH > 0 ? y / docH : 0})`;
+    const nav = this.navRef.current;
+    if (nav) {
+      const on = y > 40;
+      if (on !== this.navOn) {
+        this.navOn = on;
+        nav.style.background = on ? 'rgba(235,232,225,.8)' : 'transparent';
+        nav.style.backdropFilter = nav.style.webkitBackdropFilter = on ? 'blur(18px) saturate(1.4)' : 'none';
+        nav.style.boxShadow = on ? '0 1px 0 rgba(42,42,40,.08)' : 'none';
+        nav.style.padding = on ? '16px 0' : '2.7vw 0';
+      }
+    }
+    const fab = this.fabRef.current;
+    if (fab) {
+      const hero = document.getElementById('top'), on = !!hero && y > hero.offsetHeight * 0.55 && !this.state.menu;
+      if (on !== fab._on) { fab._on = on; fab.style.opacity = on ? '1' : '0'; fab.style.transform = on ? 'none' : 'translateY(-14px) scale(.85)'; fab.style.pointerEvents = on ? 'auto' : 'none'; }
+    }
+    this.updateSteps(vh);
+    if (this.pendingReveal && this.pendingReveal.length) {
+      this.pendingReveal = this.pendingReveal.filter(el => {
+        if (!el.isConnected) return false;
+        if (el.getBoundingClientRect().top > vh * 0.94) return true;
+        if (el.dataset.reveal === 'clip') el.style.clipPath = 'inset(0 0 0 0)'; else { el.style.opacity = '1'; el.style.transform = 'none'; }
+        return false;
+      });
+    }
+    if (this.reduced) return;
+    if (y < vh * 1.2) {
+      if (this.heroParRef.current) this.heroParRef.current.style.transform = `translate3d(0,${y * 0.15}px,0)`;
+      const ht = this.heroTextRef.current;
+      if (ht) ht.style.transform = `translate3d(0,${y * 0.08}px,0)`;
+    }
+    this.rootRef.current && this.rootRef.current.querySelectorAll('[data-par]').forEach(el => {
+      const sec = el.closest('section'); if (!sec) return;
+      const r = sec.getBoundingClientRect(), p = clamp((vh - r.top) / (vh + r.height));
+      el.style.transform = `translate3d(0,${((0.5 - p) * 12).toFixed(2)}%,0)`;
+    });
+    hsecs.forEach(hs => {
+      const tr = hs.querySelector('[data-htrack]'); if (!tr) return;
+      const r = hs.getBoundingClientRect(), total = hs.offsetHeight - vh;
+      const p = total > 0 ? clamp(-r.top / total) : 0;
+      const dist = Math.max(0, tr.scrollWidth - hs.clientWidth);
+      tr.style.transform = `translate3d(${(-p * dist).toFixed(1)}px,0,0)`;
+      const bar = hs.querySelector('[data-hbar]'); if (bar) bar.style.transform = `scaleX(${p})`;
+    });
+  }
+
+  revScroll(dir) { const el = this.revRef.current; if (el) el.scrollBy({ left: dir * 380, behavior: 'smooth' }); }
+
+  renderVals() {
+    const { faq, modal, sent, fmt, intro } = this.state;
+    const horizontal = (this.props.resultsLayout ?? 'horizontal') === 'horizontal';
+    const bp = this.bp(), dev = DEVICES[this.props.device], prev = !!dev, menu = this.state.menu;
+    if (!dev) this._renderedBp = bp;
+    return {
+      isDesk: bp === 'desk', isTabH: bp === 'tabH', isTabV: bp === 'tabV', isPhone: bp === 'phone', hasMenu: bp === 'tabV' || bp === 'phone',
+      showNav: bp === 'desk' && !prev, isPreview: prev, notPreview: !prev, previewLabel: dev ? dev.label : '',
+      stageBg: prev ? '#d6d3cb' : 'transparent', stagePad: prev ? '32px 16px 64px' : '0', stageMinH: prev ? '100vh' : '0',
+      wrapW: prev ? dev.w + 'px' : '100%', wrapRadius: prev ? '18px' : '0', wrapShadow: prev ? '0 30px 80px rgba(40,36,30,.18)' : 'none',
+      rs: (() => { const port = bp === 'tabV' || bp === 'phone', ph = bp === 'phone'; return {
+        reqCols: ph ? '1fr' : bp === 'tabV' ? 'repeat(2,minmax(0,1fr))' : 'repeat(3,minmax(0,1fr))',
+        painCols: ph ? '1fr' : bp === 'tabV' ? 'repeat(2,minmax(0,1fr))' : 'repeat(auto-fit,minmax(min(100%,340px),1fr))', cardGap: ph ? '12px' : '20px', cardPad: ph ? '26px 24px 28px' : '36px 34px 38px',
+        hoverHint: port ? 'none' : 'block', stickyPos: port ? 'static' : 'sticky', photoOrder: port ? '-1' : '0', photoRadius: ph ? '22px' : '28px',
+        aboutAR: ph ? '4/4.8' : port ? '4/3.6' : '4/5.6', aboutMaxH: port ? 'none' : 'calc(100vh - 140px)', approachCols: ph ? '1fr' : bp === 'tabV' ? 'repeat(2,minmax(0,1fr))' : 'repeat(auto-fit,minmax(min(100%,240px),1fr))', approachGap: ph ? '10px' : '14px',
+        reqW: port ? 'auto' : '800px', procW: port ? 'auto' : '450px', procAR: '4/5', procMaxH: 'none',
+        stepsPad: ph ? '34px' : '52px', dotL: ph ? '-23px' : '-41px', dotT: ph ? '45px' : '54px', stepPad: ph ? '22px 20px 24px' : '30px 34px 32px', stepNum: ph ? '34px' : '44px', stepTitle: ph ? '18px' : '21px', stepGap: ph ? '14px' : '18px',
+        expCols: bp === 'tabV' ? 'repeat(4,minmax(0,1fr))' : '1fr 1fr', expGap: ph ? '10px' : '14px', h2mb: ph ? '36px' : '56px', statGap: ph ? '22px 0' : '44px 32px',
+        statCols: ph ? '1fr' : bp === 'tabV' ? 'repeat(3,minmax(0,1fr))' : 'repeat(auto-fit,minmax(150px,1fr))', statDir: ph ? 'row' : 'column', statAlign: ph ? 'center' : 'stretch', statItemGap: ph ? '20px' : '10px', numW: ph ? '112px' : '0',
+        stepsMaxW: bp === 'tabV' ? '680px' : 'none', bordoML: bp === 'tabV' ? '52px' : '0', bordoMaxW: bp === 'tabV' ? '628px' : 'none',
+        blueWrap: bp === 'tabV' ? 'nowrap' : 'wrap',
+        contactCols: bp === 'tabV' ? 'minmax(0,1.1fr) minmax(0,1fr)' : 'repeat(auto-fit,minmax(min(100%,440px),1fr))', contactGap: bp === 'tabV' ? '36px' : '56px',
+        pricePad: ph ? '28px 22px' : 'clamp(32px,4cqw,52px)', priceGap: ph ? '22px' : '28px',
+        faqPad: ph ? '20px 18px' : '26px 30px', faqAPad: ph ? '0 18px 22px 18px' : '0 30px 28px 61px', faqGap: ph ? '14px' : '24px',
+        contactRadius: ph ? '28px' : '40px', secRadius: ph ? '28px 28px 0 0' : '40px 40px 0 0' }; })(),
+      fabRef: this.fabRef, aboutSrc: bp === 'tabV' ? 'assets/about-tablet.jpg' : 'assets/about.jpg',
+      menuOp: menu ? 1 : 0, menuPE: menu ? 'auto' : 'none', menuClip: menu ? 'inset(0 0 0 0)' : 'inset(0 0 100% 0)',
+      openMenu: () => this.setMenu(true), closeMenu: () => this.setMenu(false),
+      menuBook: () => { this.setMenu(false); this.setState({ modal: true, sent: false }); },
+      menuLinks: MENU.map(([label, href], i) => ({ label, href, n: String(i + 1).padStart(2, '0'), go: () => this.setMenu(false) })),
+      rootRef: this.rootRef, progRef: this.progRef, navRef: this.navRef, heroTextRef: this.heroTextRef, heroParRef: this.heroParRef, heroMouseRef: this.heroMouseRef,
+      ringRef: this.ringRef, stepsRef: this.stepsRef, stepsLineRef: this.stepsLineRef, trackRef: this.trackRef,
+      revRef: this.revRef, glowRef: this.glowRef,
+      cursorRef: this.cursorRef, introRef: this.introRef,
+      intro, cursorOn: (this.props.cursorOn ?? false) && typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches,
+      isHorizontal: horizontal, isGrid: !horizontal,
+      results: RESULTS.map(([t, icon, d]) => ({ t, d, icon: IC(icon) })),
+      faqItems: FAQ.map(([q, a], i) => {
+        const open = i === faq;
+        return { q, a, n: String(i + 1).padStart(2, '0'), rows: open ? '1fr' : '0fr', op: open ? 1 : 0, rot: open ? '45deg' : '0deg',
+          bg: 'linear-gradient(160deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 100%)', shadow: open ? '0 20px 50px rgba(50,45,35,.08)' : 'none',
+          iconBg: open ? '#a3502c' : '#e3e0d8', iconFg: open ? '#fff' : '#2a2a28',
+          toggle: () => this.setState({ faq: faq === i ? -1 : i }) };
+      }),
+      openModal: () => this.setState({ modal: true, sent: false }),
+      closeModal: () => this.setState({ modal: false }),
+      stop: (e) => e.stopPropagation(),
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      modalOp: modal ? 1 : 0, modalPE: modal ? 'auto' : 'none', modalTf: modal ? 'translateY(0) scale(1)' : 'translateY(40px) scale(.96)',
+      sent, notSent: !sent,
+      fmtItems: ['Первая консультация', 'Индивидуальная терапия'].map((label, i) => ({ label, pick: () => this.setState({ fmt: i }),
+        bg: fmt === i ? '#1b1b1a' : 'transparent', fg: fmt === i ? '#fff' : '#2a2a28', border: fmt === i ? '#1b1b1a' : 'rgba(42,42,40,.2)' })),
+      revPrev: () => this.revScroll(-1), revNext: () => this.revScroll(1)
+    };
+  }
+}
+</script>
+</body>
+</html>
